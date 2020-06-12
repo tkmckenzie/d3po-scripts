@@ -1,0 +1,17 @@
+Package: d3po
+Title: D3 Prototype Options
+Version: 0.0.1
+Authors@R: person("Taylor", "McKenzie", email = "tkmckenzie@gmail.com", role = c("aut", "cre"))
+Description: A collection of scripts to create common d3 diagrams using r2d3.
+Maintainer: Taylor McKenzie <tkmckenzie@gmail.com>
+Depends: R (>= 4.0.0)
+Imports: r2d3 (>= 0.2.3), webshot (>= 0.5.2)
+Suggests: ggplot2 (>= 3.1.0)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+NeedsCompilation: no
+Packaged: 2020-06-12 18:47:39 UTC; tmcken
+Author: Taylor McKenzie [aut, cre]
+Built: R 4.0.0; ; 2020-06-12 18:49:32 UTC; windows

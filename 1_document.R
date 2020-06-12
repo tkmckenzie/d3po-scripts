@@ -1,6 +1,6 @@
-setwd("~/git/r2d3.common-scripts")
+setwd("~/git/d3po-scripts")
 
 library(roxygen2)
 library(devtools)
 
-document("../r2d3.common")
+document("../d3po")

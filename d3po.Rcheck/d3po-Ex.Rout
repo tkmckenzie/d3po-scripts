@@ -1,0 +1,214 @@
+
+R version 4.0.0 (2020-04-24) -- "Arbor Day"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "d3po"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> options(pager = "console")
+> base::assign(".ExTimings", "d3po-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('d3po')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("chord")
+> ### * chord
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: chord
+> ### Title: Chord diagram
+> ### Aliases: chord
+> 
+> ### ** Examples
+> 
+> labels = c("spam", "eggs", "foo", "bar")
+> 
+> df = data.frame(source = rep(labels, each = 4),
++                 target = rep(labels, times = 4),
++                 value = c(11975, 5871, 8916, 2868,
++                           1951, 10048, 2060, 6171,
++                           8010, 16145, 8090, 8045,
++                           1013, 990, 940, 6907))
+> 
+> chord(df)
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("chord", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("cloud")
+> ### * cloud
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: cloud
+> ### Title: Word cloud diagram
+> ### Aliases: cloud
+> 
+> ### ** Examples
+> 
+> df = data.frame(text = c("foo", "bar", "spam", "eggs"),
++                 value = c(0.5, 10, 1, 10),
++                 group = c("Not Python", "Not Python", "Python", "Python"))
+> 
+> cloud(df)
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("cloud", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("df.to.adjacency")
+> ### * df.to.adjacency
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: df.to.adjacency
+> ### Title: Conversion from data.frame to adjacency matrix
+> ### Aliases: df.to.adjacency
+> 
+> ### ** Examples
+> 
+> labels = c("spam", "eggs", "foo", "bar")
+> 
+> df = data.frame(source = rep(labels, each = 4),
++                 target = rep(labels, times = 4),
++                 value = c(11975, 5871, 8916, 2868,
++                           1951, 10048, 2060, 6171,
++                           8010, 16145, 8090, 8045,
++                           1013, 990, 940, 6907))
+> 
+> df.to.adjacency(df)
+$matrix
+      spam  eggs  foo  bar
+spam 11975  5871 8916 2868
+eggs  1951 10048 2060 6171
+foo   8010 16145 8090 8045
+bar   1013   990  940 6907
+
+$labels
+[1] "spam" "eggs" "foo"  "bar" 
+
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("df.to.adjacency", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("marimekko")
+> ### * marimekko
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: marimekko
+> ### Title: Marimekko diagram
+> ### Aliases: marimekko
+> 
+> ### ** Examples
+> 
+> data(sales)
+> 
+> marimekko(sales, x.column = "market", y.column = "segment")
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("marimekko", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("sankey")
+> ### * sankey
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: sankey
+> ### Title: Sankey diagram
+> ### Aliases: sankey
+> 
+> ### ** Examples
+> 
+> data(energy)
+> 
+> sankey(energy)
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("sankey", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("save.d3")
+> ### * save.d3
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: save.d3
+> ### Title: Save d3 diagram as png
+> ### Aliases: save.d3
+> 
+> ### ** Examples
+> 
+> data(energy)
+> 
+> d3 = sankey(energy)
+> f = tempfile()
+> save.d3(d3, f)
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("save.d3", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  1.07 1.14 8.58 NA NA 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

@@ -1,0 +1,8 @@
+chord                   Chord diagram
+cloud                   Word cloud diagram
+df.to.adjacency         Conversion from data.frame to adjacency matrix
+energy                  Energy sources and sinks
+marimekko               Marimekko diagram
+sales                   Synthetic sales data
+sankey                  Sankey diagram
+save.d3                 Save d3 diagram as png

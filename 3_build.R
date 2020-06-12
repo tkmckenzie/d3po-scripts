@@ -1,4 +1,4 @@
-setwd("~/git/snfa-scripts")
+setwd("~/git/d3po-scripts")
 
-devtools::build("../snfa", ".")
-system("R CMD Rd2pdf ../snfa --force --output=snfa.pdf --no-preview .")
+devtools::build("../d3po", ".")
+system("R CMD Rd2pdf ../d3po --force --output=d3po.pdf --no-preview .")
