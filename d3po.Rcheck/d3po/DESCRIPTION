@@ -12,6 +12,6 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.1.0
 NeedsCompilation: no
-Packaged: 2020-06-12 18:47:39 UTC; tmcken
+Packaged: 2020-06-15 20:48:51 UTC; tmcken
 Author: Taylor McKenzie [aut, cre]
-Built: R 4.0.0; ; 2020-06-12 18:49:32 UTC; windows
+Built: R 4.0.0; ; 2020-06-15 20:50:34 UTC; windows

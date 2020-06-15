@@ -55,7 +55,7 @@ New submission
 * checking examples ... NOTE
 Examples with CPU (user + system) or elapsed time > 5s
         user system elapsed
-save.d3 0.08   0.83    5.96
+save.d3 0.11   0.16    5.32
 * checking PDF version of manual ... OK
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK

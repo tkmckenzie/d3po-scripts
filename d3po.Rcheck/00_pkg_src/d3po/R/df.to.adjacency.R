@@ -30,7 +30,7 @@
 
 df.to.adjacency <-
   function(df, source.column = "source", target.column = "target", value.column = "value"){
-    labels = unique(c(df$source, df$target))
+    labels = as.character(unique(c(df[,source.column], df[,target.column])))
     m = matrix(0, nrow = length(labels), ncol = length(labels))
     colnames(m) = labels
     rownames(m) = labels

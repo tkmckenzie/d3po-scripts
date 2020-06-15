@@ -57,6 +57,9 @@ cloud <-
     df = df[,c(text.column, value.column, group.column)]
     names(df) = c("text", "value", "group")
     
+    df$text = as.character(df$text)
+    df$group = as.character(df$group)
+    
     # Creating d3 diagram
     d3 = r2d3::r2d3(
       data = df,

@@ -1,3 +1,5 @@
+//Variables from R: textColor
+
 const fontFamily = "sans-serif";
 const fontScale = 15;
 rotate = () => 0;

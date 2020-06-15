@@ -1,10 +1,54 @@
-format = d => d.toLocaleString();
+//Variables from R: minOpacity, maxOpacity
 
-const unique_y = Array.from(new Set(data.map(d => d.y)));
+format = d => d.toLocaleString();
+formatName = d => d.replace(/[^A-Za-z0-9]+/g, "");
+
+function wrap(text, width) {
+    text.each(function () {
+        var text = d3.select(this),
+            words = text.text().split("\n").reverse(),
+            value = words.shift(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.1, // ems
+            x = text.attr("x"),
+            y = text.attr("y"),
+            dy = 0, //parseFloat(text.attr("dy")),
+            tspan = text.text(null)
+                        .append("tspan")
+                        .attr("x", x)
+                        .attr("y", y)
+                        .attr("dy", dy + "em");
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(""));
+            if (tspan.node().getComputedTextLength() > width) {
+                line.pop();
+                tspan.text(line.join(""));
+                line = [word];
+                tspan = text.append("tspan")
+                            .attr("x", x)
+                            .attr("y", y)
+                            .attr("dy", (++lineNumber - 1) * lineHeight + dy + "em")
+                            .text(word);
+            }
+        }
+        tspan = text.append("tspan")
+          .attr("x", x)
+          .attr("y", y)
+          .attr("dy", (++lineNumber - 1) * lineHeight + dy + "em")
+          .attr("fill-opacity", 0.7)
+          .text(value);
+    });
+    return text;
+}
+
+const unique_y = Array.from(new Set(data.map(d => formatName(d.y))));
 const range = d3.range(0, 1, 1 / (unique_y.length - 1)).concat([1]);
 const colors = range.map(d3.interpolateSpectral);
 color = d3.scaleOrdinal(colors)
-  .domain(data.map(d => d.y));
+  .domain(data.map(d => formatName(d.y)));
 
 const margin = ({top: 30, right: -1, bottom: -1, left: 1});
 
@@ -65,19 +109,13 @@ column.append("line")
 const cell = node.filter(d => d.depth === 2);
 
 cell.append("rect")
-  .attr("fill", d => color(d.data.key))
-  .attr("fill-opacity", (d, i) => d.value / d.parent.value)
+  .attr("fill", d => color(formatName(d.data.key)))
+  .attr("fill-opacity", (d, i) => (maxOpacity - minOpacity) * d.value / d.parent.value + minOpacity)
   .attr("width", d => d.x1 - d.x0 - 1)
   .attr("height", d => d.y1 - d.y0 - 1);
 
 cell.append("text")
   .attr("x", 3)
   .attr("y", "1.1em")
-  .text(d => d.data.key);
-
-cell.append("text")
-  .attr("x", 3)
-  .attr("y", "2.3em")
-  .attr("fill-opacity", 0.7)
-  .text(d => format(d.value));
-  
+  .text(d => d.data.key + "\n" + format(d.value))
+  .call(wrap, 0);

@@ -6,7 +6,8 @@
 #' @param source.column Name of column containing source nodes. Defaults to "source".
 #' @param target.column Name of column containing target nodes. Defaults to "target".
 #' @param value.column Name of column containing edge values. Defaults to "value".
-#' @param align Alignment of node labels. Defaults to "justify".
+#' @param text.align Alignment of node labels. Defaults to "outside".
+#' @param margin.proportion Proportion of image to devote to margins on both left and right side. Only effective when text.align is "outside". Defaults to 0.2, must be between 0 and 0.5.
 #' @param edge.color Method of coloring edges. The value "path" will create a gradient between two nodes. Defaults to "path".
 #' @param width Desired width for output widget.
 #' @param height Desired height for output widget.
@@ -26,13 +27,16 @@
 
 sankey <-
   function(df, source.column = "source", target.column = "target", value.column = "value",
-           align = c("justify", "left", "right", "center"), edge.color = c("path", "input", "output", "none"),
+           text.align = c("outside", "inside"), margin.proportion = 0.2,
+           edge.color = c("path", "input", "output", "none"),
            width = NULL, height = NULL, viewer = c("internal", "external", "browser")){
     
     # Parsing arguments
-    align = match.arg(align)
+    text.align = match.arg(text.align)
     edge.color = match.arg(edge.color)
     viewer = match.arg(viewer)
+    
+    if (margin.proportion < 0 | margin.proportion > 0.5) stop("margin.proportion must be between 0 and 0.5.")
     
     # JS file locations
     package.dir = system.file(package = "d3po")
@@ -42,8 +46,9 @@ sankey <-
     # Copying sankey.js and adding variables in preamble
     sankey.script = readLines(sankey.script.file)
     
-    preamble = c(sprintf("const align = \"%s\";", align),
-                 sprintf("const edgeColor = \"%s\";", edge.color))
+    preamble = c(sprintf("const textAlign = \"%s\";", text.align),
+                 sprintf("const edgeColor = \"%s\";", edge.color),
+                 sprintf("const marginProportion = %f;", margin.proportion))
     
     temp.script.file = tempfile()
     writeLines(c(preamble, sankey.script), temp.script.file)
@@ -51,6 +56,9 @@ sankey <-
     # Selecting source, target, and value columns from df and renaming
     df = df[,c(source.column, target.column, value.column)]
     names(df) = c("source", "target", "value")
+    
+    df$source = as.character(df$source)
+    df$target = as.character(df$target)
     
     # Creating d3 diagram
     d3 = r2d3::r2d3(

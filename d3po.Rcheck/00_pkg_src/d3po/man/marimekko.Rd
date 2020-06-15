@@ -9,6 +9,8 @@ marimekko(
   x.column = "x",
   y.column = "y",
   value.column = "value",
+  min.opacity = 0.25,
+  max.opacity = 0.9,
   width = NULL,
   height = NULL,
   viewer = c("internal", "external", "browser")
@@ -22,6 +24,10 @@ marimekko(
 \item{y.column}{Name of column containing vertical category data. Defaults to "y".}
 
 \item{value.column}{Name of column containing value data. Defaults to "value".}
+
+\item{min.opacity}{Minimum opacity value for area colors, between 0 and 1. Defaults to 0.25.}
+
+\item{max.opacity}{Maximum opacity value for area colors, between 0 and 1. Defaults to 0.9.}
 
 \item{width}{Desired width for output widget.}
 

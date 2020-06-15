@@ -1,3 +1,7 @@
+//Variables from R: textAlign, edgeColor, marginProportion
+
+const align = "justify"; //one of "justify", "left", "right", or "center"
+
 const links_raw = data;
 const nodes_raw = Array.from(new Set(links_raw.flatMap(l => [l.source, l.target])), name => ({name: name, category: name.replace(/[^A-Za-z0-9]+/g, "")})).sort();
 const data_raw = {nodes: nodes_raw.map(d => Object.assign({}, d)), links: links_raw.map(d => Object.assign({}, d)), units: "TWh"};
@@ -7,7 +11,7 @@ const sankey = d3.sankey()
   .nodeAlign(d3[`sankey${align[0].toUpperCase()}${align.slice(1)}`])
   .nodeWidth(15)
   .nodePadding(10)
-  .extent([[1, 5], [width - 1, height - 5]]);
+  .extent(textAlign === "outside" ? [[marginProportion * width, 10], [(1 - marginProportion) * width, height - 10]] : [[1, 5], [width - 1, height - 5]]);
 
 const {nodes, links} = sankey(data_raw);
 
@@ -63,19 +67,16 @@ link.append("path")
 			: color(d.target))
 		.attr("stroke-width", d => Math.max(1, d.width));
 
-//link.append("title")
-//		.text(d => `${d.source.name} -> ${d.target.name}\n${d.uid}\n${format(d.value)}`);
-
 svg.append("g")
 		.attr("font-family", "sans-serif")
 		.attr("font-size", 10)
 	.selectAll("text")
 	.data(nodes)
 	.enter().append("text")
-		.attr("x", d => d.x0 < width / 2 ? d.x1 + 6 : d.x0 - 6)
+		.attr("x", d => d.x0 < width / 2 ? (textAlign === "outside" ? d.x1 - 20 : d.x1 + 6) : (textAlign === "outside" ? d.x0 + 20 : d.x0 - 6))
 		.attr("y", d => (d.y1 + d.y0) / 2)
 		.attr("dy", "0.35em")
-		.attr("text-anchor", d => d.x0 < width / 2 ? "start" : "end")
+		.attr("text-anchor", d => d.x0 < width / 2 ? (textAlign === "outside" ? "end" : "start") : (textAlign === "outside" ? "start" : "end"))
 		.text(d => d.name);
 
 function format(d){

@@ -202,7 +202,7 @@ $labels
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  1.07 1.14 8.58 NA NA 
+Time elapsed:  0.81 0.52 6.42 NA NA 
 > grDevices::dev.off()
 null device 
           1 

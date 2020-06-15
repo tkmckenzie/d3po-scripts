@@ -1,3 +1,5 @@
+//Variables from R: edgeColor
+
 const outerRadius = Math.min(width, height) * 0.45;
 const innerRadius = outerRadius * 0.9;
 const bandWidth = (outerRadius - innerRadius) / 2;

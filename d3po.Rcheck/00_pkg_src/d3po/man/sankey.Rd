@@ -9,7 +9,8 @@ sankey(
   source.column = "source",
   target.column = "target",
   value.column = "value",
-  align = c("justify", "left", "right", "center"),
+  text.align = c("outside", "inside"),
+  margin.proportion = 0.2,
   edge.color = c("path", "input", "output", "none"),
   width = NULL,
   height = NULL,
@@ -25,7 +26,9 @@ sankey(
 
 \item{value.column}{Name of column containing edge values. Defaults to "value".}
 
-\item{align}{Alignment of node labels. Defaults to "justify".}
+\item{text.align}{Alignment of node labels. Defaults to "outside".}
+
+\item{margin.proportion}{Proportion of image to devote to margins on both left and right side. Only effective when text.align is "outside". Defaults to 0.2, must be between 0 and 0.5.}
 
 \item{edge.color}{Method of coloring edges. The value "path" will create a gradient between two nodes. Defaults to "path".}
 

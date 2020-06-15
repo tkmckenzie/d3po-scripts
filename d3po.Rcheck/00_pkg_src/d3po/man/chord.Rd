@@ -9,6 +9,8 @@ chord(
   source.column = "source",
   target.column = "target",
   value.column = "value",
+  adjacency.matrix = NULL,
+  labels = NULL,
   edge.color = c("path", "input", "output", "none"),
   width = NULL,
   height = NULL,
@@ -16,13 +18,17 @@ chord(
 )
 }
 \arguments{
-\item{df}{data.frame containing edge data}
+\item{df}{data.frame containing edge data.}
 
 \item{source.column}{Name of column containing source nodes. Defaults to "source".}
 
 \item{target.column}{Name of column containing target nodes. Defaults to "target".}
 
 \item{value.column}{Name of column containing edge values. Defaults to "value".}
+
+\item{adjacency.matrix}{Adjancency matrix of edge weights, as an alternative to edge list.}
+
+\item{labels}{Node names corresponding to rows/columns of adjacency.matrix.}
 
 \item{edge.color}{Method of coloring edges. The value "path" will create a gradient between two nodes. Defaults to "path".}
 
