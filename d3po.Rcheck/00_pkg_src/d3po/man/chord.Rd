@@ -12,13 +12,14 @@ chord(
   adjacency.matrix = NULL,
   labels = NULL,
   edge.color = c("path", "input", "output", "none"),
+  color.scheme = c("Spectral", d3po::color.schemes),
   width = NULL,
   height = NULL,
   viewer = c("internal", "external", "browser")
 )
 }
 \arguments{
-\item{df}{data.frame containing edge data.}
+\item{df}{data.frame containing edgelist data.}
 
 \item{source.column}{Name of column containing source nodes. Defaults to "source".}
 
@@ -32,6 +33,8 @@ chord(
 
 \item{edge.color}{Method of coloring edges. The value "path" will create a gradient between two nodes. Defaults to "path".}
 
+\item{color.scheme}{Color scheme to use in visualization. See ?d3po::color.schemes for more details.}
+
 \item{width}{Desired width for output widget.}
 
 \item{height}{Desired height for output widget.}
@@ -42,7 +45,7 @@ chord(
 A d3 object as returned by r2d3::r2d3.
 }
 \description{
-Creates chord diagram from edge data.frame.
+Creates chord diagram from edgelist data.frame.
 }
 \details{
 Utilizes a script similar to \url{https://observablehq.com/@d3/chord-diagram} adapted to work with r2d3.

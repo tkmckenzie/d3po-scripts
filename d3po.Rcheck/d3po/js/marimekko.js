@@ -1,4 +1,4 @@
-//Variables from R: minOpacity, maxOpacity
+//Variables from R: minOpacity, maxOpacity, colorScheme
 
 format = d => d.toLocaleString();
 formatName = d => d.replace(/[^A-Za-z0-9]+/g, "");
@@ -46,7 +46,7 @@ function wrap(text, width) {
 
 const unique_y = Array.from(new Set(data.map(d => formatName(d.y))));
 const range = d3.range(0, 1, 1 / (unique_y.length - 1)).concat([1]);
-const colors = range.map(d3.interpolateSpectral);
+const colors = range.map(colorScheme);
 color = d3.scaleOrdinal(colors)
   .domain(data.map(d => formatName(d.y)));
 

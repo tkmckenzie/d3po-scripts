@@ -8,6 +8,7 @@
 #' @param value.column Name of column containing value data. Defaults to "value".
 #' @param min.opacity Minimum opacity value for area colors, between 0 and 1. Defaults to 0.25.
 #' @param max.opacity Maximum opacity value for area colors, between 0 and 1. Defaults to 0.9.
+#' @param color.scheme Color scheme to use in visualization. See ?d3po::color.schemes for more details.
 #' @param width Desired width for output widget.
 #' @param height Desired height for output widget.
 #' @param viewer "internal" to use the RStudio internal viewer pane for output; "external" to display in an external RStudio window; "browser" to display in an external browser.
@@ -27,9 +28,11 @@
 marimekko <-
   function(df, x.column = "x", y.column = "y", value.column = "value",
            min.opacity = 0.25, max.opacity = 0.9,
+           color.scheme = c("Spectral", d3po::color.schemes),
            width = NULL, height = NULL, viewer = c("internal", "external", "browser")){
     
     # Parsing arguments
+    color.scheme = match.arg(color.scheme)
     viewer = match.arg(viewer)
     
     if (min.opacity < 0 | min.opacity > 1) stop("min.opacity must be between 0 and 1.")
@@ -44,7 +47,8 @@ marimekko <-
     marimekko.script = readLines(marimekko.script.file)
     
     preamble = c(sprintf("const minOpacity = %f;", min.opacity),
-                 sprintf("const maxOpacity = %f;", max.opacity))
+                 sprintf("const maxOpacity = %f;", max.opacity),
+                 sprintf("const colorScheme = d3.interpolate%s;", color.scheme))
     
     temp.script.file = tempfile()
     writeLines(c(preamble, marimekko.script), temp.script.file)

@@ -1,4 +1,4 @@
-//Variables from R: edgeColor
+//Variables from R: edgeColor, colorScheme
 
 const outerRadius = Math.min(width, height) * 0.45;
 const innerRadius = outerRadius * 0.9;
@@ -24,7 +24,7 @@ ribbon = d3.ribbon()
 	.radius(innerRadius);
 
 const range = d3.range(0, 1, 1 / (data.labels.length - 1)).concat([1]);
-const colors = range.map(d3.interpolateSpectral);
+const colors = range.map(colorScheme);
 color = d3.scaleOrdinal(colors)
   .domain(data.labels);
 

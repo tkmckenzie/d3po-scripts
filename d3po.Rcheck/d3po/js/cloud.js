@@ -1,4 +1,4 @@
-//Variables from R: textColor
+//Variables from R: textColor, colorScheme
 
 const fontFamily = "sans-serif";
 const fontScale = 15;
@@ -13,7 +13,7 @@ const uniqueGroups = Array.from(new Set(data.map(d => d.group)));
 const range = textColor === "group" ? d3.range(0, 1, 1 / (uniqueGroups.length - 1)).concat([1])
   : textColor === "word" ? d3.range(0, 1, 1 / (data.length - 1)).concat([1])
   : [1];
-const colors = range.map(d3.interpolateSpectral);
+const colors = range.map(colorScheme);
 color = d3.scaleOrdinal(colors);
 
 const cloud = d3.layout.cloud()

@@ -12,13 +12,14 @@ sankey(
   text.align = c("outside", "inside"),
   margin.proportion = 0.2,
   edge.color = c("path", "input", "output", "none"),
+  color.scheme = c("Spectral", d3po::color.schemes),
   width = NULL,
   height = NULL,
   viewer = c("internal", "external", "browser")
 )
 }
 \arguments{
-\item{df}{data.frame containing edge data}
+\item{df}{data.frame containing edgelist data.}
 
 \item{source.column}{Name of column containing source nodes. Defaults to "source".}
 
@@ -31,6 +32,8 @@ sankey(
 \item{margin.proportion}{Proportion of image to devote to margins on both left and right side. Only effective when text.align is "outside". Defaults to 0.2, must be between 0 and 0.5.}
 
 \item{edge.color}{Method of coloring edges. The value "path" will create a gradient between two nodes. Defaults to "path".}
+
+\item{color.scheme}{Color scheme to use in visualization. See ?d3po::color.schemes for more details.}
 
 \item{width}{Desired width for output widget.}
 

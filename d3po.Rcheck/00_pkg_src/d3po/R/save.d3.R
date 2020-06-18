@@ -12,11 +12,13 @@
 #' @param title Title for HTML diagram.
 #' 
 #' @examples
+#' \dontrun{
 #' data(energy)
 #' 
 #' d3 = sankey(energy)
 #' f = tempfile()
 #' save.d3(d3, f)
+#' }
 #' 
 #' @export
 

@@ -7,6 +7,7 @@
 #' @param value.column Name of column containing edge values. Defaults to "value".
 #' @param group.column Name of column containing group data. Defaults to "group". If group.column is not found in df, a new column with a single group will be created.
 #' @param text.color How to color text; "group" (default) colors by group, "word" colors by word, and "none" colors all words black.
+#' @param color.scheme Color scheme to use in visualization. See ?d3po::color.schemes for more details.
 #' @param width Desired width for output widget.
 #' @param height Desired height for output widget.
 #' @param viewer "internal" to use the RStudio internal viewer pane for output; "external" to display in an external RStudio window; "browser" to display in an external browser.
@@ -28,10 +29,12 @@
 cloud <-
   function(df, text.column = "text", value.column = "value", group.column = "group",
            text.color = c("group", "word", "none"),
+           color.scheme = c("Spectral", d3po::color.schemes),
            width = NULL, height = NULL, viewer = c("internal", "external", "browser")){
     
     # Parsing arguments
     text.color = match.arg(text.color)
+    color.scheme = match.arg(color.scheme)
     viewer = match.arg(viewer)
     
     # JS file locations
@@ -48,7 +51,8 @@ cloud <-
     # Copying sankey.js and adding variables in preamble
     cloud.script = readLines(cloud.script.file)
     
-    preamble = c(sprintf("const textColor = \"%s\";", text.color))
+    preamble = c(sprintf("const textColor = \"%s\";", text.color),
+                 sprintf("const colorScheme = d3.interpolate%s;", color.scheme))
     
     temp.script.file = tempfile()
     writeLines(c(preamble, cloud.script), temp.script.file)

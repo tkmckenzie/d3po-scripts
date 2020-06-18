@@ -1,8 +1,14 @@
 chord                   Chord diagram
+choropleth.county       County level choropleth
+choropleth.state        State level choropleth
 cloud                   Word cloud diagram
+color.schemes           Compatible D3 Color Schemes
 df.to.adjacency         Conversion from data.frame to adjacency matrix
-energy                  Energy sources and sinks
+energy                  Energy Sources and Sinks
 marimekko               Marimekko diagram
-sales                   Synthetic sales data
+sales                   Synthetic Sales Data
 sankey                  Sankey diagram
 save.d3                 Save d3 diagram as png
+unemployment.county     County Unemployment
+unemployment.state      State Unemployment
+us.counties             Counties in the U.S.

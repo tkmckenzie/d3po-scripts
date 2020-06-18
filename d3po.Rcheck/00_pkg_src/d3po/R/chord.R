@@ -1,14 +1,15 @@
 #' Chord diagram
 #' 
-#' Creates chord diagram from edge data.frame.
+#' Creates chord diagram from edgelist data.frame.
 #' 
-#' @param df data.frame containing edge data.
+#' @param df data.frame containing edgelist data.
 #' @param source.column Name of column containing source nodes. Defaults to "source".
 #' @param target.column Name of column containing target nodes. Defaults to "target".
 #' @param value.column Name of column containing edge values. Defaults to "value".
 #' @param adjacency.matrix Adjancency matrix of edge weights, as an alternative to edge list.
 #' @param labels Node names corresponding to rows/columns of adjacency.matrix.
 #' @param edge.color Method of coloring edges. The value "path" will create a gradient between two nodes. Defaults to "path".
+#' @param color.scheme Color scheme to use in visualization. See ?d3po::color.schemes for more details.
 #' @param width Desired width for output widget.
 #' @param height Desired height for output widget.
 #' @param viewer "internal" to use the RStudio internal viewer pane for output; "external" to display in an external RStudio window; "browser" to display in an external browser.
@@ -36,10 +37,13 @@ chord <-
   function(df, source.column = "source", target.column = "target", value.column = "value",
            adjacency.matrix = NULL, labels = NULL,
            edge.color = c("path", "input", "output", "none"),
+           color.scheme = c("Spectral", d3po::color.schemes),
            width = NULL, height = NULL, viewer = c("internal", "external", "browser")){
     
     # Parsing arguments
+    # print(color.scheme)
     edge.color = match.arg(edge.color)
+    color.scheme = match.arg(color.scheme)
     viewer = match.arg(viewer)
     
     if (missing(df)){
@@ -62,7 +66,8 @@ chord <-
     # Copying sankey.js and adding variables in preamble
     chord.script = readLines(chord.script.file)
     
-    preamble = c(sprintf("const edgeColor = \"%s\";", edge.color))
+    preamble = c(sprintf("const edgeColor = \"%s\";", edge.color),
+                 sprintf("const colorScheme = d3.interpolate%s;", color.scheme))
     
     temp.script.file = tempfile()
     writeLines(c(preamble, chord.script), temp.script.file)

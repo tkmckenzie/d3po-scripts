@@ -11,6 +11,7 @@ marimekko(
   value.column = "value",
   min.opacity = 0.25,
   max.opacity = 0.9,
+  color.scheme = c("Spectral", d3po::color.schemes),
   width = NULL,
   height = NULL,
   viewer = c("internal", "external", "browser")
@@ -28,6 +29,8 @@ marimekko(
 \item{min.opacity}{Minimum opacity value for area colors, between 0 and 1. Defaults to 0.25.}
 
 \item{max.opacity}{Maximum opacity value for area colors, between 0 and 1. Defaults to 0.9.}
+
+\item{color.scheme}{Color scheme to use in visualization. See ?d3po::color.schemes for more details.}
 
 \item{width}{Desired width for output widget.}
 

@@ -1,4 +1,4 @@
-//Variables from R: textAlign, edgeColor, marginProportion
+//Variables from R: textAlign, edgeColor, marginProportion, colorScheme
 
 const align = "justify"; //one of "justify", "left", "right", or "center"
 
@@ -16,7 +16,7 @@ const sankey = d3.sankey()
 const {nodes, links} = sankey(data_raw);
 
 const range = d3.range(0, 1, 1 / (nodes.length - 1)).concat([1]);
-const colors = range.map(d3.interpolateSpectral);
+const colors = range.map(colorScheme);
 const colorScale = d3.scaleOrdinal(colors);
 color = d => colorScale(d.category === undefined ? d.name : d.category);
 

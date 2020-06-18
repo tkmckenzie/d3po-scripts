@@ -48,6 +48,60 @@ chord(df)
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("chord", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
+nameEx("choropleth.county")
+### * choropleth.county
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: choropleth.county
+### Title: County level choropleth
+### Aliases: choropleth.county
+
+### ** Examples
+
+## Not run: 
+##D data(unemployment.county)
+##D 
+##D choropleth.county(unemployment.county,
+##D                  state.column = "state",
+##D                  county.column = "county",
+##D                  id.column = "id",
+##D                  value.column = "rate",
+##D                  legend.title = "Unemployment rate (%)")
+## End(Not run)
+
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("choropleth.county", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("choropleth.state")
+### * choropleth.state
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: choropleth.state
+### Title: State level choropleth
+### Aliases: choropleth.state
+
+### ** Examples
+
+data(unemployment.state)
+
+choropleth.state(unemployment.state,
+                 state.column = "name",
+                 value.column = "rate",
+                 legend.title = "Unemployment rate (%)")
+
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("choropleth.state", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
 nameEx("cloud")
 ### * cloud
 
@@ -157,11 +211,13 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 ### ** Examples
 
-data(energy)
-
-d3 = sankey(energy)
-f = tempfile()
-save.d3(d3, f)
+## Not run: 
+##D data(energy)
+##D 
+##D d3 = sankey(energy)
+##D f = tempfile()
+##D save.d3(d3, f)
+## End(Not run)
 
 
 

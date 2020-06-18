@@ -10,6 +10,7 @@ cloud(
   value.column = "value",
   group.column = "group",
   text.color = c("group", "word", "none"),
+  color.scheme = c("Spectral", d3po::color.schemes),
   width = NULL,
   height = NULL,
   viewer = c("internal", "external", "browser")
@@ -25,6 +26,8 @@ cloud(
 \item{group.column}{Name of column containing group data. Defaults to "group". If group.column is not found in df, a new column with a single group will be created.}
 
 \item{text.color}{How to color text; "group" (default) colors by group, "word" colors by word, and "none" colors all words black.}
+
+\item{color.scheme}{Color scheme to use in visualization. See ?d3po::color.schemes for more details.}
 
 \item{width}{Desired width for output widget.}
 

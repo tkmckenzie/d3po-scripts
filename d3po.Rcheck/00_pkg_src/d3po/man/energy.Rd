@@ -3,7 +3,7 @@
 \docType{data}
 \name{energy}
 \alias{energy}
-\title{Energy sources and sinks}
+\title{Energy Sources and Sinks}
 \format{
 An object of class \code{data.frame} with 68 rows and 3 columns.
 }

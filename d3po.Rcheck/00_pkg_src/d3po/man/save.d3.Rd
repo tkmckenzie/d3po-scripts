@@ -36,10 +36,12 @@ save.d3(
 Saves d3 diagram as a png image using webshot.
 }
 \examples{
+\dontrun{
 data(energy)
 
 d3 = sankey(energy)
 f = tempfile()
 save.d3(d3, f)
+}
 
 }

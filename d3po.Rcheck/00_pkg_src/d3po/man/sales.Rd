@@ -3,7 +3,7 @@
 \docType{data}
 \name{sales}
 \alias{sales}
-\title{Synthetic sales data}
+\title{Synthetic Sales Data}
 \format{
 An object of class \code{data.frame} with 16 rows and 3 columns.
 }
