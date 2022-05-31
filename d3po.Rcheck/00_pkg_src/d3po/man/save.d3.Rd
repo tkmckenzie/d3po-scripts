@@ -18,7 +18,7 @@ save.d3(
 \arguments{
 \item{d3}{A d3 object.}
 
-\item{file}{Location to save image.}
+\item{file}{Location to save image. Must have extension ".png" or ".html".}
 
 \item{width}{Width of image.}
 
@@ -40,7 +40,7 @@ Saves d3 diagram as a png image using webshot.
 data(energy)
 
 d3 = sankey(energy)
-f = tempfile()
+f = paste0(tempfile(), ".html")
 save.d3(d3, f)
 }
 

@@ -1,6 +1,7 @@
 #' Compatible D3 Color Schemes
 #' 
-#' Vector of color schemes available. Most/all d3po functions use d3.interpolate<scheme>.
+#' List of color schemes available and indicators of whether schemes are divergent.
+#' All d3po functions use d3.interpolate<scheme>.
 #' See \url{https://github.com/d3/d3-scale-chromatic} for more details on scales.
 "color.schemes"
 
@@ -13,6 +14,14 @@
 #' 
 "energy"
 
+#' Flare Class Hierarchy
+#' 
+#' Dataset describing the hierarchy of the Flare Javascript class. The data object is a list
+#' of two data.frames. The first (ancestry.df) describes the hierarchy as a list of parent
+#' and child nodes. The second (leaf.df) gives values for leaves of the hierarchy that can
+#' be used for sizing. Taken from \url{https://observablehq.com/@d3/sunburst}.
+"flare"
+
 #' Synthetic Sales Data
 #' 
 #' Fictitious dataset describing sales of various products in various locales.
@@ -22,13 +31,13 @@
 
 #' County Unemployment
 #' 
-#' Unemployment rate by county, August 2016. Data: Bureau of Labor Statistics.
+#' Unemployment rate by county, August 2016. Source: Bureau of Labor Statistics.
 #'
 "unemployment.county"
 
 #' State Unemployment
 #' 
-#' Unemployment rate by state, July 2019. Data: Bureau of Labor Statistics.
+#' Unemployment rate by state, July 2019. Source: Bureau of Labor Statistics.
 #'
 "unemployment.state"
 

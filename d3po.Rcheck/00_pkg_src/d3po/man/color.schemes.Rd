@@ -5,13 +5,14 @@
 \alias{color.schemes}
 \title{Compatible D3 Color Schemes}
 \format{
-An object of class \code{character} of length 38.
+An object of class \code{list} of length 38.
 }
 \usage{
 color.schemes
 }
 \description{
-Vector of color schemes available. Most/all d3po functions use d3.interpolate<scheme>.
+List of color schemes available and indicators of whether schemes are divergent.
+All d3po functions use d3.interpolate<scheme>.
 See \url{https://github.com/d3/d3-scale-chromatic} for more details on scales.
 }
 \keyword{datasets}

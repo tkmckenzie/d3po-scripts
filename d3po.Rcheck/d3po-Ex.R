@@ -64,8 +64,6 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ##D data(unemployment.county)
 ##D 
 ##D choropleth.county(unemployment.county,
-##D                  state.column = "state",
-##D                  county.column = "county",
 ##D                  id.column = "id",
 ##D                  value.column = "rate",
 ##D                  legend.title = "Unemployment rate (%)")
@@ -115,7 +113,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ### ** Examples
 
 df = data.frame(text = c("foo", "bar", "spam", "eggs"),
-                value = c(0.5, 10, 1, 10),
+                value = 2 * c(0.5, 10, 1, 10),
                 group = c("Not Python", "Not Python", "Python", "Python"))
 
 cloud(df)
@@ -154,6 +152,28 @@ df.to.adjacency(df)
 
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("df.to.adjacency", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("df.to.hierarchy")
+### * df.to.hierarchy
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: df.to.hierarchy
+### Title: Conversion from data.frame to hierarchy
+### Aliases: df.to.hierarchy
+
+### ** Examples
+
+data(flare)
+
+df.to.hierarchy(flare$ancestry.df, flare$leaf.df)
+
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("df.to.hierarchy", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 cleanEx()
 nameEx("marimekko")
 ### * marimekko
@@ -215,7 +235,7 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 ##D data(energy)
 ##D 
 ##D d3 = sankey(energy)
-##D f = tempfile()
+##D f = paste0(tempfile(), ".html")
 ##D save.d3(d3, f)
 ## End(Not run)
 
@@ -224,6 +244,28 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 base::cat("save.d3", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("sunburst")
+### * sunburst
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: sunburst
+### Title: Sunburst diagram
+### Aliases: sunburst
+
+### ** Examples
+
+data(flare)
+
+sunburst(flare$ancestry.df, flare$leaf.df)
+
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("sunburst", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 ### * <FOOTER>
 ###
 cleanEx()

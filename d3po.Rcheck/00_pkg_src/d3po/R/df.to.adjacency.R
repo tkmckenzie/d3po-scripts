@@ -11,9 +11,6 @@
 #' \item{matrix}{Adjacency matrix}
 #' \item{labels}{Names of nodes, in same order as rows/columns of adjacency matrix}
 #' 
-#' @details
-#' Utilizes a script similar to \url{https://observablehq.com/@d3/chord-diagram} adapted to work with r2d3.
-#' 
 #' @examples
 #' labels = c("spam", "eggs", "foo", "bar")
 #' 

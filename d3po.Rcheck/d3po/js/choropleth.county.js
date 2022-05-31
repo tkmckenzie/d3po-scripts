@@ -1,6 +1,4 @@
-// !preview r2d3 data = list(values = unemployment, shape = jsonlite::read_json("map_data/state.json")), dependencies = c("topojson-client/dist/topojson-client.js")
-
-// Variables from R: title, legendTextSize, scaleTextSize, colorDomain, numLegendTicks, colorScheme
+// Variables from R: title, legendTextSize, scaleTextSize, colorDomain, numLegendTicks, colorScheme, divergentColorScheme
 
 // Color domain and range parameters
 const colorDomainMin = Math.min(...colorDomain);

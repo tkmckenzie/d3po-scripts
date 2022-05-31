@@ -28,9 +28,6 @@ A list with two components:
 \description{
 Creates an adjacency matrix from an edge list data.frame.
 }
-\details{
-Utilizes a script similar to \url{https://observablehq.com/@d3/chord-diagram} adapted to work with r2d3.
-}
 \examples{
 labels = c("spam", "eggs", "foo", "bar")
 

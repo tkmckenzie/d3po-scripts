@@ -4,11 +4,14 @@ choropleth.state        State level choropleth
 cloud                   Word cloud diagram
 color.schemes           Compatible D3 Color Schemes
 df.to.adjacency         Conversion from data.frame to adjacency matrix
+df.to.hierarchy         Conversion from data.frame to hierarchy
 energy                  Energy Sources and Sinks
+flare                   Flare Class Hierarchy
 marimekko               Marimekko diagram
 sales                   Synthetic Sales Data
 sankey                  Sankey diagram
 save.d3                 Save d3 diagram as png
+sunburst                Sunburst diagram
 unemployment.county     County Unemployment
 unemployment.state      State Unemployment
 us.counties             Counties in the U.S.

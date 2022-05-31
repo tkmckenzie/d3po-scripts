@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.30)  18 JUN 2020 14:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.30)  14 JUL 2020 08:17
 entering extended mode
-**C:/Users/tmcken/AppData/Local/Temp/Rtmp2Ldhf5/Rd2pdf497052e53626/Rd2.tex
-(C:/Users/tmcken/AppData/Local/Temp/Rtmp2Ldhf5/Rd2pdf497052e53626/Rd2.tex
+**C:/Users/tmcken/AppData/Local/Temp/RtmpwxALlI/Rd2pdf15583df51496/Rd2.tex
+(C:/Users/tmcken/AppData/Local/Temp/RtmpwxALlI/Rd2pdf15583df51496/Rd2.tex
 LaTeX2e <2017-04-15>
 Babel <3.18> and hyphenation patterns for 75 language(s) loaded.
 
@@ -23,7 +23,7 @@ File: bk10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(C:/PROGRA~1/R/R-40~1.0/share/texmf/tex/latex\Rd.sty
+(C:/PROGRA~1/R/R-40~1.2/share/texmf/tex/latex\Rd.sty
 Package: Rd 
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
@@ -816,26 +816,26 @@ LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
  [2]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-) [3]
-Overfull \hbox (74.82707pt too wide) in paragraph at lines 154--155
-[]\T1/ptm/m/n/10 Range of val-ues for the color scale. De-faults to c(min(df[,v
-alue.column]), max(df[,value.column])).
+)
+Overfull \hbox (110.30902pt too wide) in paragraph at lines 148--149
+[]\T1/ptm/m/n/10 Range of val-ues for the color scale. De-faults to \T1/zi4/m/n
+/10 c(min(df[,value.column]),max(df[,value.column]))\T1/ptm/m/n/10 .
  []
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+[3] ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ) [4]
-Overfull \hbox (74.82707pt too wide) in paragraph at lines 232--233
-[]\T1/ptm/m/n/10 Range of val-ues for the color scale. De-faults to c(min(df[,v
-alue.column]), max(df[,value.column])).
+Overfull \hbox (110.30902pt too wide) in paragraph at lines 224--225
+[]\T1/ptm/m/n/10 Range of val-ues for the color scale. De-faults to \T1/zi4/m/n
+/10 c(min(df[,value.column]),max(df[,value.column]))\T1/ptm/m/n/10 .
  []
 
-[5] ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
-File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-) [6]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
+) [5]
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+) [6]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ) [7]
@@ -847,6 +847,9 @@ File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ) [8]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ) [9]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
@@ -856,45 +859,57 @@ File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 ) [11]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-)
+) [12]
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+) [13]
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
 File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
-) [12] (Rd2.ind [13]
-[14
+) [14]
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+) (Rd2.ind [15] [16
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 680.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 680.
- (Rd2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 680.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 680.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 807.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 807.
+
+(Rd2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 807.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 807.
 Package rerunfilecheck Info: File `Rd2.out' has not changed.
-(rerunfilecheck)             Checksum: EE207F3D44EDFA385D91DDC28FAA2AFC;811.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 680.
+(rerunfilecheck)             Checksum: C2FC3AB74D1321D2C91E989E99CE6729;969.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 807.
  ) 
 Here is how much of TeX's memory you used:
- 6712 strings out of 493305
- 96070 string characters out of 3138871
- 174976 words of memory out of 3000000
- 10027 multiletter control sequences out of 15000+200000
+ 6744 strings out of 493305
+ 96691 string characters out of 3138871
+ 175976 words of memory out of 3000000
+ 10030 multiletter control sequences out of 15000+200000
  37889 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,5n,36p,283b,594s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Users/tmcken/App
-Data/Roaming/MiKTeX/2.9/fonts/enc/dvips/inconsolata/i4-t1-0.enc}<C:/Users/tmcke
-n/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/inconsolata/Inconsolata-zi4r.pf
-b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utm
-r8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (14 pages, 135747 bytes).
+ 38i,5n,36p,281b,594s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Rfn.jsonlite} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Rfn.r2d3} has been referenced but does not exist, r
+eplaced by a fixed one
+
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Users/tmcken/AppDa
+ta/Roaming/MiKTeX/2.9/fonts/enc/dvips/inconsolata/i4-t1-0.enc}<C:/Users/tmcken/
+AppData/Roaming/MiKTeX/2.9/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8
+a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (16 pages, 152113 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 110 named destinations out of 1000 (max. 500000)
- 121 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -10,7 +10,8 @@ cloud(
   value.column = "value",
   group.column = "group",
   text.color = c("group", "word", "none"),
-  color.scheme = c("Spectral", d3po::color.schemes),
+  color.scheme = c("Rainbow", names(d3po::color.schemes)),
+  legend.font.size = 20,
   width = NULL,
   height = NULL,
   viewer = c("internal", "external", "browser")
@@ -27,7 +28,9 @@ cloud(
 
 \item{text.color}{How to color text; "group" (default) colors by group, "word" colors by word, and "none" colors all words black.}
 
-\item{color.scheme}{Color scheme to use in visualization. See ?d3po::color.schemes for more details.}
+\item{color.scheme}{Color scheme to use in visualization. See \link[d3po]{color.schemes} for more details.}
+
+\item{legend.font.size}{Size of font in legend in points. Defaults to 20.}
 
 \item{width}{Desired width for output widget.}
 
@@ -36,7 +39,7 @@ cloud(
 \item{viewer}{"internal" to use the RStudio internal viewer pane for output; "external" to display in an external RStudio window; "browser" to display in an external browser.}
 }
 \value{
-A d3 object as returned by r2d3::r2d3.
+A d3 object as returned by \link[r2d3]{r2d3}.
 }
 \description{
 Creates word cloud diagram text and value data.frame.
@@ -46,7 +49,7 @@ Utilizes a script similar to \url{https://observablehq.com/@d3/word-cloud} adapt
 }
 \examples{
 df = data.frame(text = c("foo", "bar", "spam", "eggs"),
-                value = c(0.5, 10, 1, 10),
+                value = 2 * c(0.5, 10, 1, 10),
                 group = c("Not Python", "Not Python", "Python", "Python"))
 
 cloud(df)

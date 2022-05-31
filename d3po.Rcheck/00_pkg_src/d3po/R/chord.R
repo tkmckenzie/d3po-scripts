@@ -9,12 +9,12 @@
 #' @param adjacency.matrix Adjancency matrix of edge weights, as an alternative to edge list.
 #' @param labels Node names corresponding to rows/columns of adjacency.matrix.
 #' @param edge.color Method of coloring edges. The value "path" will create a gradient between two nodes. Defaults to "path".
-#' @param color.scheme Color scheme to use in visualization. See ?d3po::color.schemes for more details.
+#' @param color.scheme Color scheme to use in visualization. See \link[d3po]{color.schemes} for more details.
 #' @param width Desired width for output widget.
 #' @param height Desired height for output widget.
 #' @param viewer "internal" to use the RStudio internal viewer pane for output; "external" to display in an external RStudio window; "browser" to display in an external browser.
 #' 
-#' @return A d3 object as returned by r2d3::r2d3.
+#' @return A d3 object as returned by \link[r2d3]{r2d3}.
 #' 
 #' @details
 #' Utilizes a script similar to \url{https://observablehq.com/@d3/chord-diagram} adapted to work with r2d3.
@@ -37,7 +37,7 @@ chord <-
   function(df, source.column = "source", target.column = "target", value.column = "value",
            adjacency.matrix = NULL, labels = NULL,
            edge.color = c("path", "input", "output", "none"),
-           color.scheme = c("Spectral", d3po::color.schemes),
+           color.scheme = c("Spectral", names(d3po::color.schemes)),
            width = NULL, height = NULL, viewer = c("internal", "external", "browser")){
     
     # Parsing arguments
@@ -61,13 +61,15 @@ chord <-
     
     # JS file locations
     package.dir = system.file(package = "d3po")
+    d3.scale.chromatic.file = paste0(package.dir, "/js/d3-scale-chromatic/d3-scale-chromatic.js")
     chord.script.file = paste0(package.dir, "/js/chord.js")
     
     # Copying sankey.js and adding variables in preamble
     chord.script = readLines(chord.script.file)
     
     preamble = c(sprintf("const edgeColor = \"%s\";", edge.color),
-                 sprintf("const colorScheme = d3.interpolate%s;", color.scheme))
+                 sprintf("const colorScheme = d3.interpolate%s;", color.scheme),
+                 sprintf("const divergentColorScheme = %s;", tolower(d3po::color.schemes[[color.scheme]])))
     
     temp.script.file = tempfile()
     writeLines(c(preamble, chord.script), temp.script.file)
@@ -76,6 +78,7 @@ chord <-
     d3 = r2d3::r2d3(
       data = matrix.labels,
       script = temp.script.file,
+      dependencies = d3.scale.chromatic.file,
       width = width,
       height = height,
       viewer = viewer

@@ -11,6 +11,6 @@ An object of class \code{data.frame} with 51 rows and 3 columns.
 unemployment.state
 }
 \description{
-Unemployment rate by state, July 2019. Data: Bureau of Labor Statistics.
+Unemployment rate by state, July 2019. Source: Bureau of Labor Statistics.
 }
 \keyword{datasets}

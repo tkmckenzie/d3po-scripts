@@ -11,6 +11,6 @@ An object of class \code{data.frame} with 3219 rows and 4 columns.
 unemployment.county
 }
 \description{
-Unemployment rate by county, August 2016. Data: Bureau of Labor Statistics.
+Unemployment rate by county, August 2016. Source: Bureau of Labor Statistics.
 }
 \keyword{datasets}

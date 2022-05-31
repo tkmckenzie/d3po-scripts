@@ -12,7 +12,7 @@ chord(
   adjacency.matrix = NULL,
   labels = NULL,
   edge.color = c("path", "input", "output", "none"),
-  color.scheme = c("Spectral", d3po::color.schemes),
+  color.scheme = c("Spectral", names(d3po::color.schemes)),
   width = NULL,
   height = NULL,
   viewer = c("internal", "external", "browser")
@@ -33,7 +33,7 @@ chord(
 
 \item{edge.color}{Method of coloring edges. The value "path" will create a gradient between two nodes. Defaults to "path".}
 
-\item{color.scheme}{Color scheme to use in visualization. See ?d3po::color.schemes for more details.}
+\item{color.scheme}{Color scheme to use in visualization. See \link[d3po]{color.schemes} for more details.}
 
 \item{width}{Desired width for output widget.}
 
@@ -42,7 +42,7 @@ chord(
 \item{viewer}{"internal" to use the RStudio internal viewer pane for output; "external" to display in an external RStudio window; "browser" to display in an external browser.}
 }
 \value{
-A d3 object as returned by r2d3::r2d3.
+A d3 object as returned by \link[r2d3]{r2d3}.
 }
 \description{
 Creates chord diagram from edgelist data.frame.

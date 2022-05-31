@@ -17,7 +17,7 @@ library(d3po)
 set.seed(123)
 ```
 
-The `r2d3` package provides a general framework with which R objects can be used to produce D3 documents. While the package provides very general capabilities, there are a handful of commonly used D3 visualizations that users must build by hand. The `d3po` package provides some of these common visualizations in an easier-to-use format, leveraging `r2d3` to produce the D3 documents. This vignette demonstrates each of the visualizations included in `d3po`.
+The `r2d3` package provides a general framework with which R objects can be used to produce D3 documents. While the package provides very general capabilities, there are a handful of commonly used D3 visualizations that users must build by hand. The `d3po` (D3 Popular Outputs) package provides some of these common visualizations in an easier-to-use format, leveraging `r2d3` to produce the D3 documents. This vignette demonstrates each of the visualizations included in `d3po`.
 
 # Diagrams #
 
@@ -102,4 +102,17 @@ df = data.frame(source = rep(LETTERS[1:num.sources], each = num.targets),
                 target = rep(letters[1:num.targets], times = num.sources),
                 value = runif(num.groups * num.vars, 0, 10))
 sankey(df)
+```
+
+## Sunburst Diagrams ##
+Sunburst diagrams can be used to show how individual pieces contribute to the whole through a hierarchy. The `d3po::sunburst` function creates a sunburst diagram from an ancestry data.frame describing links of the hierarchy and a leaf value data.frame giving values for nodes without children.
+```{r}
+num.children = 15
+num.parents = 3
+ancestry.df = data.frame(parent = sample(LETTERS[1:num.parents], num.children, replace = TRUE),
+                         child = letters[1:num.children])
+ancestry.df = rbind(data.frame(parent = "flare", child = LETTERS[1:num.parents]), ancestry.df) # Need to specify head nodes
+leaf.df = data.frame(id = letters[1:num.children], value = runif(num.children, 0, 10))
+
+sunburst(ancestry.df, leaf.df)
 ```

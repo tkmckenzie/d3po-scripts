@@ -1,6 +1,41 @@
-//Variables from R: textAlign, edgeColor, marginProportion, colorScheme
+//Variables from R: sortNodes, textAlign, edgeColor, marginProportion, colorScheme, divergentColorScheme
 
 const align = "justify"; //one of "justify", "left", "right", or "center"
+
+function wrap(text, width) {
+    text.each(function () {
+        var text = d3.select(this),
+            words = text.text().split("\n").reverse(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.1, // ems
+            x = text.attr("x"),
+            y = text.attr("y"),
+            //dy = 0, //parseFloat(text.attr("dy")),
+            dy = (0.9 - 0.5 * words.length) * lineHeight;
+            tspan = text.text(null)
+                        .append("tspan")
+                        .attr("x", x)
+                        .attr("y", y)
+                        .attr("dy", dy + "em");
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(""));
+            if (tspan.node().getComputedTextLength() > width) {
+                line.pop();
+                tspan.text(line.join(""));
+                line = [word];
+                tspan = text.append("tspan")
+                            .attr("x", x)
+                            .attr("y", y)
+                            .attr("dy", (++lineNumber - 1) * lineHeight + dy + "em")
+                            .text(word);
+            }
+        }
+    });
+    return text;
+}
 
 const links_raw = data;
 const nodes_raw = Array.from(new Set(links_raw.flatMap(l => [l.source, l.target])), name => ({name: name, category: name.replace(/[^A-Za-z0-9]+/g, "")})).sort();
@@ -13,9 +48,14 @@ const sankey = d3.sankey()
   .nodePadding(10)
   .extent(textAlign === "outside" ? [[marginProportion * width, 10], [(1 - marginProportion) * width, height - 10]] : [[1, 5], [width - 1, height - 5]]);
 
+if (!sortNodes){
+  sankey.nodeSort(null);
+}
+
 const {nodes, links} = sankey(data_raw);
 
-const range = d3.range(0, 1, 1 / (nodes.length - 1)).concat([1]);
+const range = divergentColorScheme ? d3.range(0, 1, 1 / (nodes.length - 1)).concat([1])
+  : d3.range(0, 1, 1 / (nodes.length));
 const colors = range.map(colorScheme);
 const colorScale = d3.scaleOrdinal(colors);
 color = d => colorScale(d.category === undefined ? d.name : d.category);
@@ -77,7 +117,8 @@ svg.append("g")
 		.attr("y", d => (d.y1 + d.y0) / 2)
 		.attr("dy", "0.35em")
 		.attr("text-anchor", d => d.x0 < width / 2 ? (textAlign === "outside" ? "end" : "start") : (textAlign === "outside" ? "start" : "end"))
-		.text(d => d.name);
+		.text(d => d.name)
+		.call(wrap, 0);
 
 function format(d){
 	const format = d3.format(",.0f");

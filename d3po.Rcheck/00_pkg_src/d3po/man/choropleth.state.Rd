@@ -13,7 +13,7 @@ choropleth.state(
   scale.text.size = 16,
   color.domain = NULL,
   num.legend.ticks = 5,
-  color.scheme = c("Blues", d3po::color.schemes),
+  color.scheme = c("Blues", names(d3po::color.schemes)),
   width = NULL,
   height = NULL,
   viewer = c("internal", "external", "browser")
@@ -22,7 +22,7 @@ choropleth.state(
 \arguments{
 \item{df}{data.frame containing value data by state.}
 
-\item{state.column}{Name of column containing state names. Defaults to "state". All values in this column must match c(datasets::state.name, "District of Columbia").}
+\item{state.column}{Name of column containing state names. Defaults to "state". All values in this column must match \code{c(datasets::state.name, "District of Columbia")}.}
 
 \item{value.column}{Name of column containing values by state. Defaults to "value".}
 
@@ -32,11 +32,11 @@ choropleth.state(
 
 \item{scale.text.size}{Size of text (in points) for the scale values. Defaults to 16.}
 
-\item{color.domain}{Range of values for the color scale. Defaults to c(min(df[,value.column]), max(df[,value.column])). Length greater than two results in a multi-point gradient.}
+\item{color.domain}{Range of values for the color scale. Defaults to \code{c(min(df[,value.column]), max(df[,value.column]))}. Length greater than two results in a multi-point gradient.}
 
 \item{num.legend.ticks}{Number of breaks in legend scale. Defaults to 5.}
 
-\item{color.scheme}{Color scheme to use in visualization. See ?d3po::color.schemes for more details.}
+\item{color.scheme}{Color scheme to use in visualization. See \link[d3po]{color.schemes} for more details.}
 
 \item{width}{Desired width for output widget.}
 
@@ -45,7 +45,7 @@ choropleth.state(
 \item{viewer}{"internal" to use the RStudio internal viewer pane for output; "external" to display in an external RStudio window; "browser" to display in an external browser.}
 }
 \value{
-A d3 object as returned by r2d3::r2d3.
+A d3 object as returned by \link[r2d3]{r2d3}.
 }
 \description{
 Creates choropleth at the U.S. state level.

@@ -1,5 +1,5 @@
 
-R version 4.0.0 (2020-04-24) -- "Arbor Day"
+R version 4.0.2 (2020-06-22) -- "Taking Off Again"
 Copyright (C) 2020 The R Foundation for Statistical Computing
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 
@@ -83,8 +83,6 @@ Type 'q()' to quit R.
 > ##D data(unemployment.county)
 > ##D 
 > ##D choropleth.county(unemployment.county,
-> ##D                  state.column = "state",
-> ##D                  county.column = "county",
 > ##D                  id.column = "id",
 > ##D                  value.column = "rate",
 > ##D                  legend.title = "Unemployment rate (%)")
@@ -134,7 +132,7 @@ Type 'q()' to quit R.
 > ### ** Examples
 > 
 > df = data.frame(text = c("foo", "bar", "spam", "eggs"),
-+                 value = c(0.5, 10, 1, 10),
++                 value = 2 * c(0.5, 10, 1, 10),
 +                 group = c("Not Python", "Not Python", "Python", "Python"))
 > 
 > cloud(df)
@@ -183,6 +181,1987 @@ $labels
 > 
 > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 > base::cat("df.to.adjacency", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("df.to.hierarchy")
+> ### * df.to.hierarchy
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: df.to.hierarchy
+> ### Title: Conversion from data.frame to hierarchy
+> ### Aliases: df.to.hierarchy
+> 
+> ### ** Examples
+> 
+> data(flare)
+> 
+> df.to.hierarchy(flare$ancestry.df, flare$leaf.df)
+$name
+[1] "flare"
+
+$children
+$children[[1]]
+$children[[1]]$name
+[1] "analytics"
+
+$children[[1]]$children
+$children[[1]]$children[[1]]
+$children[[1]]$children[[1]]$name
+[1] "cluster"
+
+$children[[1]]$children[[1]]$children
+$children[[1]]$children[[1]]$children[[1]]
+$children[[1]]$children[[1]]$children[[1]]$name
+[1] "AgglomerativeCluster"
+
+$children[[1]]$children[[1]]$children[[1]]$value
+[1] 3938
+
+
+$children[[1]]$children[[1]]$children[[2]]
+$children[[1]]$children[[1]]$children[[2]]$name
+[1] "CommunityStructure"
+
+$children[[1]]$children[[1]]$children[[2]]$value
+[1] 3812
+
+
+$children[[1]]$children[[1]]$children[[3]]
+$children[[1]]$children[[1]]$children[[3]]$name
+[1] "HierarchicalCluster"
+
+$children[[1]]$children[[1]]$children[[3]]$value
+[1] 6714
+
+
+$children[[1]]$children[[1]]$children[[4]]
+$children[[1]]$children[[1]]$children[[4]]$name
+[1] "MergeEdge"
+
+$children[[1]]$children[[1]]$children[[4]]$value
+[1] 743
+
+
+
+
+$children[[1]]$children[[2]]
+$children[[1]]$children[[2]]$name
+[1] "graph"
+
+$children[[1]]$children[[2]]$children
+$children[[1]]$children[[2]]$children[[1]]
+$children[[1]]$children[[2]]$children[[1]]$name
+[1] "BetweennessCentrality"
+
+$children[[1]]$children[[2]]$children[[1]]$value
+[1] 3534
+
+
+$children[[1]]$children[[2]]$children[[2]]
+$children[[1]]$children[[2]]$children[[2]]$name
+[1] "LinkDistance"
+
+$children[[1]]$children[[2]]$children[[2]]$value
+[1] 5731
+
+
+$children[[1]]$children[[2]]$children[[3]]
+$children[[1]]$children[[2]]$children[[3]]$name
+[1] "MaxFlowMinCut"
+
+$children[[1]]$children[[2]]$children[[3]]$value
+[1] 7840
+
+
+$children[[1]]$children[[2]]$children[[4]]
+$children[[1]]$children[[2]]$children[[4]]$name
+[1] "ShortestPaths"
+
+$children[[1]]$children[[2]]$children[[4]]$value
+[1] 5914
+
+
+$children[[1]]$children[[2]]$children[[5]]
+$children[[1]]$children[[2]]$children[[5]]$name
+[1] "SpanningTree"
+
+$children[[1]]$children[[2]]$children[[5]]$value
+[1] 3416
+
+
+
+
+$children[[1]]$children[[3]]
+$children[[1]]$children[[3]]$name
+[1] "optimization"
+
+$children[[1]]$children[[3]]$children
+$children[[1]]$children[[3]]$children[[1]]
+$children[[1]]$children[[3]]$children[[1]]$name
+[1] "AspectRatioBanker"
+
+$children[[1]]$children[[3]]$children[[1]]$value
+[1] 7074
+
+
+
+
+
+
+$children[[2]]
+$children[[2]]$name
+[1] "animate"
+
+$children[[2]]$children
+$children[[2]]$children[[1]]
+$children[[2]]$children[[1]]$name
+[1] "Easing"
+
+$children[[2]]$children[[1]]$value
+[1] 17010
+
+
+$children[[2]]$children[[2]]
+$children[[2]]$children[[2]]$name
+[1] "FunctionSequence"
+
+$children[[2]]$children[[2]]$value
+[1] 5842
+
+
+$children[[2]]$children[[3]]
+$children[[2]]$children[[3]]$name
+[1] "interpolate"
+
+$children[[2]]$children[[3]]$children
+$children[[2]]$children[[3]]$children[[1]]
+$children[[2]]$children[[3]]$children[[1]]$name
+[1] "ArrayInterpolator"
+
+$children[[2]]$children[[3]]$children[[1]]$value
+[1] 1983
+
+
+$children[[2]]$children[[3]]$children[[2]]
+$children[[2]]$children[[3]]$children[[2]]$name
+[1] "ColorInterpolator"
+
+$children[[2]]$children[[3]]$children[[2]]$value
+[1] 2047
+
+
+$children[[2]]$children[[3]]$children[[3]]
+$children[[2]]$children[[3]]$children[[3]]$name
+[1] "DateInterpolator"
+
+$children[[2]]$children[[3]]$children[[3]]$value
+[1] 1375
+
+
+$children[[2]]$children[[3]]$children[[4]]
+$children[[2]]$children[[3]]$children[[4]]$name
+[1] "Interpolator"
+
+$children[[2]]$children[[3]]$children[[4]]$value
+[1] 8746
+
+
+$children[[2]]$children[[3]]$children[[5]]
+$children[[2]]$children[[3]]$children[[5]]$name
+[1] "MatrixInterpolator"
+
+$children[[2]]$children[[3]]$children[[5]]$value
+[1] 2202
+
+
+$children[[2]]$children[[3]]$children[[6]]
+$children[[2]]$children[[3]]$children[[6]]$name
+[1] "NumberInterpolator"
+
+$children[[2]]$children[[3]]$children[[6]]$value
+[1] 1382
+
+
+$children[[2]]$children[[3]]$children[[7]]
+$children[[2]]$children[[3]]$children[[7]]$name
+[1] "ObjectInterpolator"
+
+$children[[2]]$children[[3]]$children[[7]]$value
+[1] 1629
+
+
+$children[[2]]$children[[3]]$children[[8]]
+$children[[2]]$children[[3]]$children[[8]]$name
+[1] "PointInterpolator"
+
+$children[[2]]$children[[3]]$children[[8]]$value
+[1] 1675
+
+
+$children[[2]]$children[[3]]$children[[9]]
+$children[[2]]$children[[3]]$children[[9]]$name
+[1] "RectangleInterpolator"
+
+$children[[2]]$children[[3]]$children[[9]]$value
+[1] 2042
+
+
+
+
+$children[[2]]$children[[4]]
+$children[[2]]$children[[4]]$name
+[1] "ISchedulable"
+
+$children[[2]]$children[[4]]$value
+[1] 1041
+
+
+$children[[2]]$children[[5]]
+$children[[2]]$children[[5]]$name
+[1] "Parallel"
+
+$children[[2]]$children[[5]]$value
+[1] 5176
+
+
+$children[[2]]$children[[6]]
+$children[[2]]$children[[6]]$name
+[1] "Pause"
+
+$children[[2]]$children[[6]]$value
+[1] 449
+
+
+$children[[2]]$children[[7]]
+$children[[2]]$children[[7]]$name
+[1] "Scheduler"
+
+$children[[2]]$children[[7]]$value
+[1] 5593
+
+
+$children[[2]]$children[[8]]
+$children[[2]]$children[[8]]$name
+[1] "Sequence"
+
+$children[[2]]$children[[8]]$value
+[1] 5534
+
+
+$children[[2]]$children[[9]]
+$children[[2]]$children[[9]]$name
+[1] "Transition"
+
+$children[[2]]$children[[9]]$value
+[1] 9201
+
+
+$children[[2]]$children[[10]]
+$children[[2]]$children[[10]]$name
+[1] "Transitioner"
+
+$children[[2]]$children[[10]]$value
+[1] 19975
+
+
+$children[[2]]$children[[11]]
+$children[[2]]$children[[11]]$name
+[1] "TransitionEvent"
+
+$children[[2]]$children[[11]]$value
+[1] 1116
+
+
+$children[[2]]$children[[12]]
+$children[[2]]$children[[12]]$name
+[1] "Tween"
+
+$children[[2]]$children[[12]]$value
+[1] 6006
+
+
+
+
+$children[[3]]
+$children[[3]]$name
+[1] "display"
+
+$children[[3]]$children
+$children[[3]]$children[[1]]
+$children[[3]]$children[[1]]$name
+[1] "DirtySprite"
+
+$children[[3]]$children[[1]]$value
+[1] 8833
+
+
+$children[[3]]$children[[2]]
+$children[[3]]$children[[2]]$name
+[1] "LineSprite"
+
+$children[[3]]$children[[2]]$value
+[1] 1732
+
+
+$children[[3]]$children[[3]]
+$children[[3]]$children[[3]]$name
+[1] "RectSprite"
+
+$children[[3]]$children[[3]]$value
+[1] 3623
+
+
+$children[[3]]$children[[4]]
+$children[[3]]$children[[4]]$name
+[1] "TextSprite"
+
+$children[[3]]$children[[4]]$value
+[1] 10066
+
+
+
+
+$children[[4]]
+$children[[4]]$name
+[1] "flex"
+
+$children[[4]]$children
+$children[[4]]$children[[1]]
+$children[[4]]$children[[1]]$name
+[1] "FlareVis"
+
+$children[[4]]$children[[1]]$value
+[1] 4116
+
+
+
+
+$children[[5]]
+$children[[5]]$name
+[1] "physics"
+
+$children[[5]]$children
+$children[[5]]$children[[1]]
+$children[[5]]$children[[1]]$name
+[1] "DragForce"
+
+$children[[5]]$children[[1]]$value
+[1] 1082
+
+
+$children[[5]]$children[[2]]
+$children[[5]]$children[[2]]$name
+[1] "GravityForce"
+
+$children[[5]]$children[[2]]$value
+[1] 1336
+
+
+$children[[5]]$children[[3]]
+$children[[5]]$children[[3]]$name
+[1] "IForce"
+
+$children[[5]]$children[[3]]$value
+[1] 319
+
+
+$children[[5]]$children[[4]]
+$children[[5]]$children[[4]]$name
+[1] "NBodyForce"
+
+$children[[5]]$children[[4]]$value
+[1] 10498
+
+
+$children[[5]]$children[[5]]
+$children[[5]]$children[[5]]$name
+[1] "Particle"
+
+$children[[5]]$children[[5]]$value
+[1] 2822
+
+
+$children[[5]]$children[[6]]
+$children[[5]]$children[[6]]$name
+[1] "Simulation"
+
+$children[[5]]$children[[6]]$value
+[1] 9983
+
+
+$children[[5]]$children[[7]]
+$children[[5]]$children[[7]]$name
+[1] "Spring"
+
+$children[[5]]$children[[7]]$value
+[1] 2213
+
+
+$children[[5]]$children[[8]]
+$children[[5]]$children[[8]]$name
+[1] "SpringForce"
+
+$children[[5]]$children[[8]]$value
+[1] 1681
+
+
+
+
+$children[[6]]
+$children[[6]]$name
+[1] "query"
+
+$children[[6]]$children
+$children[[6]]$children[[1]]
+$children[[6]]$children[[1]]$name
+[1] "AggregateExpression"
+
+$children[[6]]$children[[1]]$value
+[1] 1616
+
+
+$children[[6]]$children[[2]]
+$children[[6]]$children[[2]]$name
+[1] "And"
+
+$children[[6]]$children[[2]]$value
+[1] 1027
+
+
+$children[[6]]$children[[3]]
+$children[[6]]$children[[3]]$name
+[1] "Arithmetic"
+
+$children[[6]]$children[[3]]$value
+[1] 3891
+
+
+$children[[6]]$children[[4]]
+$children[[6]]$children[[4]]$name
+[1] "Average"
+
+$children[[6]]$children[[4]]$value
+[1] 891
+
+
+$children[[6]]$children[[5]]
+$children[[6]]$children[[5]]$name
+[1] "BinaryExpression"
+
+$children[[6]]$children[[5]]$value
+[1] 2893
+
+
+$children[[6]]$children[[6]]
+$children[[6]]$children[[6]]$name
+[1] "Comparison"
+
+$children[[6]]$children[[6]]$value
+[1] 5103
+
+
+$children[[6]]$children[[7]]
+$children[[6]]$children[[7]]$name
+[1] "CompositeExpression"
+
+$children[[6]]$children[[7]]$value
+[1] 3677
+
+
+$children[[6]]$children[[8]]
+$children[[6]]$children[[8]]$name
+[1] "Count"
+
+$children[[6]]$children[[8]]$value
+[1] 781
+
+
+$children[[6]]$children[[9]]
+$children[[6]]$children[[9]]$name
+[1] "DateUtil"
+
+$children[[6]]$children[[9]]$value
+[1] 4141
+
+
+$children[[6]]$children[[10]]
+$children[[6]]$children[[10]]$name
+[1] "Distinct"
+
+$children[[6]]$children[[10]]$value
+[1] 933
+
+
+$children[[6]]$children[[11]]
+$children[[6]]$children[[11]]$name
+[1] "Expression"
+
+$children[[6]]$children[[11]]$value
+[1] 5130
+
+
+$children[[6]]$children[[12]]
+$children[[6]]$children[[12]]$name
+[1] "ExpressionIterator"
+
+$children[[6]]$children[[12]]$value
+[1] 3617
+
+
+$children[[6]]$children[[13]]
+$children[[6]]$children[[13]]$name
+[1] "Fn"
+
+$children[[6]]$children[[13]]$value
+[1] 3240
+
+
+$children[[6]]$children[[14]]
+$children[[6]]$children[[14]]$name
+[1] "If"
+
+$children[[6]]$children[[14]]$value
+[1] 2732
+
+
+$children[[6]]$children[[15]]
+$children[[6]]$children[[15]]$name
+[1] "IsA"
+
+$children[[6]]$children[[15]]$value
+[1] 2039
+
+
+$children[[6]]$children[[16]]
+$children[[6]]$children[[16]]$name
+[1] "Literal"
+
+$children[[6]]$children[[16]]$value
+[1] 1214
+
+
+$children[[6]]$children[[17]]
+$children[[6]]$children[[17]]$name
+[1] "Match"
+
+$children[[6]]$children[[17]]$value
+[1] 3748
+
+
+$children[[6]]$children[[18]]
+$children[[6]]$children[[18]]$name
+[1] "Maximum"
+
+$children[[6]]$children[[18]]$value
+[1] 843
+
+
+$children[[6]]$children[[19]]
+$children[[6]]$children[[19]]$name
+[1] "methods"
+
+$children[[6]]$children[[19]]$children
+$children[[6]]$children[[19]]$children[[1]]
+$children[[6]]$children[[19]]$children[[1]]$name
+[1] "add"
+
+$children[[6]]$children[[19]]$children[[1]]$value
+[1] 593
+
+
+$children[[6]]$children[[19]]$children[[2]]
+$children[[6]]$children[[19]]$children[[2]]$name
+[1] "and"
+
+$children[[6]]$children[[19]]$children[[2]]$value
+[1] 330
+
+
+$children[[6]]$children[[19]]$children[[3]]
+$children[[6]]$children[[19]]$children[[3]]$name
+[1] "average"
+
+$children[[6]]$children[[19]]$children[[3]]$value
+[1] 287
+
+
+$children[[6]]$children[[19]]$children[[4]]
+$children[[6]]$children[[19]]$children[[4]]$name
+[1] "count"
+
+$children[[6]]$children[[19]]$children[[4]]$value
+[1] 277
+
+
+$children[[6]]$children[[19]]$children[[5]]
+$children[[6]]$children[[19]]$children[[5]]$name
+[1] "distinct"
+
+$children[[6]]$children[[19]]$children[[5]]$value
+[1] 292
+
+
+$children[[6]]$children[[19]]$children[[6]]
+$children[[6]]$children[[19]]$children[[6]]$name
+[1] "div"
+
+$children[[6]]$children[[19]]$children[[6]]$value
+[1] 595
+
+
+$children[[6]]$children[[19]]$children[[7]]
+$children[[6]]$children[[19]]$children[[7]]$name
+[1] "eq"
+
+$children[[6]]$children[[19]]$children[[7]]$value
+[1] 594
+
+
+$children[[6]]$children[[19]]$children[[8]]
+$children[[6]]$children[[19]]$children[[8]]$name
+[1] "fn"
+
+$children[[6]]$children[[19]]$children[[8]]$value
+[1] 460
+
+
+$children[[6]]$children[[19]]$children[[9]]
+$children[[6]]$children[[19]]$children[[9]]$name
+[1] "gt"
+
+$children[[6]]$children[[19]]$children[[9]]$value
+[1] 603
+
+
+$children[[6]]$children[[19]]$children[[10]]
+$children[[6]]$children[[19]]$children[[10]]$name
+[1] "gte"
+
+$children[[6]]$children[[19]]$children[[10]]$value
+[1] 625
+
+
+$children[[6]]$children[[19]]$children[[11]]
+$children[[6]]$children[[19]]$children[[11]]$name
+[1] "iff"
+
+$children[[6]]$children[[19]]$children[[11]]$value
+[1] 748
+
+
+$children[[6]]$children[[19]]$children[[12]]
+$children[[6]]$children[[19]]$children[[12]]$name
+[1] "isa"
+
+$children[[6]]$children[[19]]$children[[12]]$value
+[1] 461
+
+
+$children[[6]]$children[[19]]$children[[13]]
+$children[[6]]$children[[19]]$children[[13]]$name
+[1] "lt"
+
+$children[[6]]$children[[19]]$children[[13]]$value
+[1] 597
+
+
+$children[[6]]$children[[19]]$children[[14]]
+$children[[6]]$children[[19]]$children[[14]]$name
+[1] "lte"
+
+$children[[6]]$children[[19]]$children[[14]]$value
+[1] 619
+
+
+$children[[6]]$children[[19]]$children[[15]]
+$children[[6]]$children[[19]]$children[[15]]$name
+[1] "max"
+
+$children[[6]]$children[[19]]$children[[15]]$value
+[1] 283
+
+
+$children[[6]]$children[[19]]$children[[16]]
+$children[[6]]$children[[19]]$children[[16]]$name
+[1] "min"
+
+$children[[6]]$children[[19]]$children[[16]]$value
+[1] 283
+
+
+$children[[6]]$children[[19]]$children[[17]]
+$children[[6]]$children[[19]]$children[[17]]$name
+[1] "mod"
+
+$children[[6]]$children[[19]]$children[[17]]$value
+[1] 591
+
+
+$children[[6]]$children[[19]]$children[[18]]
+$children[[6]]$children[[19]]$children[[18]]$name
+[1] "mul"
+
+$children[[6]]$children[[19]]$children[[18]]$value
+[1] 603
+
+
+$children[[6]]$children[[19]]$children[[19]]
+$children[[6]]$children[[19]]$children[[19]]$name
+[1] "neq"
+
+$children[[6]]$children[[19]]$children[[19]]$value
+[1] 599
+
+
+$children[[6]]$children[[19]]$children[[20]]
+$children[[6]]$children[[19]]$children[[20]]$name
+[1] "not"
+
+$children[[6]]$children[[19]]$children[[20]]$value
+[1] 386
+
+
+$children[[6]]$children[[19]]$children[[21]]
+$children[[6]]$children[[19]]$children[[21]]$name
+[1] "or"
+
+$children[[6]]$children[[19]]$children[[21]]$value
+[1] 323
+
+
+$children[[6]]$children[[19]]$children[[22]]
+$children[[6]]$children[[19]]$children[[22]]$name
+[1] "orderby"
+
+$children[[6]]$children[[19]]$children[[22]]$value
+[1] 307
+
+
+$children[[6]]$children[[19]]$children[[23]]
+$children[[6]]$children[[19]]$children[[23]]$name
+[1] "range"
+
+$children[[6]]$children[[19]]$children[[23]]$value
+[1] 772
+
+
+$children[[6]]$children[[19]]$children[[24]]
+$children[[6]]$children[[19]]$children[[24]]$name
+[1] "select"
+
+$children[[6]]$children[[19]]$children[[24]]$value
+[1] 296
+
+
+$children[[6]]$children[[19]]$children[[25]]
+$children[[6]]$children[[19]]$children[[25]]$name
+[1] "stddev"
+
+$children[[6]]$children[[19]]$children[[25]]$value
+[1] 363
+
+
+$children[[6]]$children[[19]]$children[[26]]
+$children[[6]]$children[[19]]$children[[26]]$name
+[1] "sub"
+
+$children[[6]]$children[[19]]$children[[26]]$value
+[1] 600
+
+
+$children[[6]]$children[[19]]$children[[27]]
+$children[[6]]$children[[19]]$children[[27]]$name
+[1] "sum"
+
+$children[[6]]$children[[19]]$children[[27]]$value
+[1] 280
+
+
+$children[[6]]$children[[19]]$children[[28]]
+$children[[6]]$children[[19]]$children[[28]]$name
+[1] "update"
+
+$children[[6]]$children[[19]]$children[[28]]$value
+[1] 307
+
+
+$children[[6]]$children[[19]]$children[[29]]
+$children[[6]]$children[[19]]$children[[29]]$name
+[1] "variance"
+
+$children[[6]]$children[[19]]$children[[29]]$value
+[1] 335
+
+
+$children[[6]]$children[[19]]$children[[30]]
+$children[[6]]$children[[19]]$children[[30]]$name
+[1] "where"
+
+$children[[6]]$children[[19]]$children[[30]]$value
+[1] 299
+
+
+$children[[6]]$children[[19]]$children[[31]]
+$children[[6]]$children[[19]]$children[[31]]$name
+[1] "xor"
+
+$children[[6]]$children[[19]]$children[[31]]$value
+[1] 354
+
+
+$children[[6]]$children[[19]]$children[[32]]
+$children[[6]]$children[[19]]$children[[32]]$name
+[1] "_"
+
+$children[[6]]$children[[19]]$children[[32]]$value
+[1] 264
+
+
+
+
+$children[[6]]$children[[20]]
+$children[[6]]$children[[20]]$name
+[1] "Minimum"
+
+$children[[6]]$children[[20]]$value
+[1] 843
+
+
+$children[[6]]$children[[21]]
+$children[[6]]$children[[21]]$name
+[1] "Not"
+
+$children[[6]]$children[[21]]$value
+[1] 1554
+
+
+$children[[6]]$children[[22]]
+$children[[6]]$children[[22]]$name
+[1] "Or"
+
+$children[[6]]$children[[22]]$value
+[1] 970
+
+
+$children[[6]]$children[[23]]
+$children[[6]]$children[[23]]$name
+[1] "Query"
+
+$children[[6]]$children[[23]]$value
+[1] 13896
+
+
+$children[[6]]$children[[24]]
+$children[[6]]$children[[24]]$name
+[1] "Range"
+
+$children[[6]]$children[[24]]$value
+[1] 1594
+
+
+$children[[6]]$children[[25]]
+$children[[6]]$children[[25]]$name
+[1] "StringUtil"
+
+$children[[6]]$children[[25]]$value
+[1] 4130
+
+
+$children[[6]]$children[[26]]
+$children[[6]]$children[[26]]$name
+[1] "Sum"
+
+$children[[6]]$children[[26]]$value
+[1] 791
+
+
+$children[[6]]$children[[27]]
+$children[[6]]$children[[27]]$name
+[1] "Variable"
+
+$children[[6]]$children[[27]]$value
+[1] 1124
+
+
+$children[[6]]$children[[28]]
+$children[[6]]$children[[28]]$name
+[1] "Variance"
+
+$children[[6]]$children[[28]]$value
+[1] 1876
+
+
+$children[[6]]$children[[29]]
+$children[[6]]$children[[29]]$name
+[1] "Xor"
+
+$children[[6]]$children[[29]]$value
+[1] 1101
+
+
+
+
+$children[[7]]
+$children[[7]]$name
+[1] "scale"
+
+$children[[7]]$children
+$children[[7]]$children[[1]]
+$children[[7]]$children[[1]]$name
+[1] "IScaleMap"
+
+$children[[7]]$children[[1]]$value
+[1] 2105
+
+
+$children[[7]]$children[[2]]
+$children[[7]]$children[[2]]$name
+[1] "LinearScale"
+
+$children[[7]]$children[[2]]$value
+[1] 1316
+
+
+$children[[7]]$children[[3]]
+$children[[7]]$children[[3]]$name
+[1] "LogScale"
+
+$children[[7]]$children[[3]]$value
+[1] 3151
+
+
+$children[[7]]$children[[4]]
+$children[[7]]$children[[4]]$name
+[1] "OrdinalScale"
+
+$children[[7]]$children[[4]]$value
+[1] 3770
+
+
+$children[[7]]$children[[5]]
+$children[[7]]$children[[5]]$name
+[1] "QuantileScale"
+
+$children[[7]]$children[[5]]$value
+[1] 2435
+
+
+$children[[7]]$children[[6]]
+$children[[7]]$children[[6]]$name
+[1] "QuantitativeScale"
+
+$children[[7]]$children[[6]]$value
+[1] 4839
+
+
+$children[[7]]$children[[7]]
+$children[[7]]$children[[7]]$name
+[1] "RootScale"
+
+$children[[7]]$children[[7]]$value
+[1] 1756
+
+
+$children[[7]]$children[[8]]
+$children[[7]]$children[[8]]$name
+[1] "Scale"
+
+$children[[7]]$children[[8]]$value
+[1] 4268
+
+
+$children[[7]]$children[[9]]
+$children[[7]]$children[[9]]$name
+[1] "ScaleType"
+
+$children[[7]]$children[[9]]$value
+[1] 1821
+
+
+$children[[7]]$children[[10]]
+$children[[7]]$children[[10]]$name
+[1] "TimeScale"
+
+$children[[7]]$children[[10]]$value
+[1] 5833
+
+
+
+
+$children[[8]]
+$children[[8]]$name
+[1] "util"
+
+$children[[8]]$children
+$children[[8]]$children[[1]]
+$children[[8]]$children[[1]]$name
+[1] "Arrays"
+
+$children[[8]]$children[[1]]$value
+[1] 8258
+
+
+$children[[8]]$children[[2]]
+$children[[8]]$children[[2]]$name
+[1] "Colors"
+
+$children[[8]]$children[[2]]$value
+[1] 10001
+
+
+$children[[8]]$children[[3]]
+$children[[8]]$children[[3]]$name
+[1] "Dates"
+
+$children[[8]]$children[[3]]$value
+[1] 8217
+
+
+$children[[8]]$children[[4]]
+$children[[8]]$children[[4]]$name
+[1] "Displays"
+
+$children[[8]]$children[[4]]$value
+[1] 12555
+
+
+$children[[8]]$children[[5]]
+$children[[8]]$children[[5]]$name
+[1] "Filter"
+
+$children[[8]]$children[[5]]$value
+[1] 2324
+
+
+$children[[8]]$children[[6]]
+$children[[8]]$children[[6]]$name
+[1] "Geometry"
+
+$children[[8]]$children[[6]]$value
+[1] 10993
+
+
+$children[[8]]$children[[7]]
+$children[[8]]$children[[7]]$name
+[1] "heap"
+
+$children[[8]]$children[[7]]$children
+$children[[8]]$children[[7]]$children[[1]]
+$children[[8]]$children[[7]]$children[[1]]$name
+[1] "FibonacciHeap"
+
+$children[[8]]$children[[7]]$children[[1]]$value
+[1] 9354
+
+
+$children[[8]]$children[[7]]$children[[2]]
+$children[[8]]$children[[7]]$children[[2]]$name
+[1] "HeapNode"
+
+$children[[8]]$children[[7]]$children[[2]]$value
+[1] 1233
+
+
+
+
+$children[[8]]$children[[8]]
+$children[[8]]$children[[8]]$name
+[1] "IEvaluable"
+
+$children[[8]]$children[[8]]$value
+[1] 335
+
+
+$children[[8]]$children[[9]]
+$children[[8]]$children[[9]]$name
+[1] "IPredicate"
+
+$children[[8]]$children[[9]]$value
+[1] 383
+
+
+$children[[8]]$children[[10]]
+$children[[8]]$children[[10]]$name
+[1] "IValueProxy"
+
+$children[[8]]$children[[10]]$value
+[1] 874
+
+
+$children[[8]]$children[[11]]
+$children[[8]]$children[[11]]$name
+[1] "math"
+
+$children[[8]]$children[[11]]$children
+$children[[8]]$children[[11]]$children[[1]]
+$children[[8]]$children[[11]]$children[[1]]$name
+[1] "DenseMatrix"
+
+$children[[8]]$children[[11]]$children[[1]]$value
+[1] 3165
+
+
+$children[[8]]$children[[11]]$children[[2]]
+$children[[8]]$children[[11]]$children[[2]]$name
+[1] "IMatrix"
+
+$children[[8]]$children[[11]]$children[[2]]$value
+[1] 2815
+
+
+$children[[8]]$children[[11]]$children[[3]]
+$children[[8]]$children[[11]]$children[[3]]$name
+[1] "SparseMatrix"
+
+$children[[8]]$children[[11]]$children[[3]]$value
+[1] 3366
+
+
+
+
+$children[[8]]$children[[12]]
+$children[[8]]$children[[12]]$name
+[1] "Maths"
+
+$children[[8]]$children[[12]]$value
+[1] 17705
+
+
+$children[[8]]$children[[13]]
+$children[[8]]$children[[13]]$name
+[1] "Orientation"
+
+$children[[8]]$children[[13]]$value
+[1] 1486
+
+
+$children[[8]]$children[[14]]
+$children[[8]]$children[[14]]$name
+[1] "palette"
+
+$children[[8]]$children[[14]]$children
+$children[[8]]$children[[14]]$children[[1]]
+$children[[8]]$children[[14]]$children[[1]]$name
+[1] "ColorPalette"
+
+$children[[8]]$children[[14]]$children[[1]]$value
+[1] 6367
+
+
+$children[[8]]$children[[14]]$children[[2]]
+$children[[8]]$children[[14]]$children[[2]]$name
+[1] "Palette"
+
+$children[[8]]$children[[14]]$children[[2]]$value
+[1] 1229
+
+
+$children[[8]]$children[[14]]$children[[3]]
+$children[[8]]$children[[14]]$children[[3]]$name
+[1] "ShapePalette"
+
+$children[[8]]$children[[14]]$children[[3]]$value
+[1] 2059
+
+
+$children[[8]]$children[[14]]$children[[4]]
+$children[[8]]$children[[14]]$children[[4]]$name
+[1] "SizePalette"
+
+$children[[8]]$children[[14]]$children[[4]]$value
+[1] 2291
+
+
+
+
+$children[[8]]$children[[15]]
+$children[[8]]$children[[15]]$name
+[1] "Property"
+
+$children[[8]]$children[[15]]$value
+[1] 5559
+
+
+$children[[8]]$children[[16]]
+$children[[8]]$children[[16]]$name
+[1] "Shapes"
+
+$children[[8]]$children[[16]]$value
+[1] 19118
+
+
+$children[[8]]$children[[17]]
+$children[[8]]$children[[17]]$name
+[1] "Sort"
+
+$children[[8]]$children[[17]]$value
+[1] 6887
+
+
+$children[[8]]$children[[18]]
+$children[[8]]$children[[18]]$name
+[1] "Stats"
+
+$children[[8]]$children[[18]]$value
+[1] 6557
+
+
+$children[[8]]$children[[19]]
+$children[[8]]$children[[19]]$name
+[1] "Strings"
+
+$children[[8]]$children[[19]]$value
+[1] 22026
+
+
+
+
+$children[[9]]
+$children[[9]]$name
+[1] "vis"
+
+$children[[9]]$children
+$children[[9]]$children[[1]]
+$children[[9]]$children[[1]]$name
+[1] "axis"
+
+$children[[9]]$children[[1]]$children
+$children[[9]]$children[[1]]$children[[1]]
+$children[[9]]$children[[1]]$children[[1]]$name
+[1] "Axes"
+
+$children[[9]]$children[[1]]$children[[1]]$value
+[1] 1302
+
+
+$children[[9]]$children[[1]]$children[[2]]
+$children[[9]]$children[[1]]$children[[2]]$name
+[1] "Axis"
+
+$children[[9]]$children[[1]]$children[[2]]$value
+[1] 24593
+
+
+$children[[9]]$children[[1]]$children[[3]]
+$children[[9]]$children[[1]]$children[[3]]$name
+[1] "AxisGridLine"
+
+$children[[9]]$children[[1]]$children[[3]]$value
+[1] 652
+
+
+$children[[9]]$children[[1]]$children[[4]]
+$children[[9]]$children[[1]]$children[[4]]$name
+[1] "AxisLabel"
+
+$children[[9]]$children[[1]]$children[[4]]$value
+[1] 636
+
+
+$children[[9]]$children[[1]]$children[[5]]
+$children[[9]]$children[[1]]$children[[5]]$name
+[1] "CartesianAxes"
+
+$children[[9]]$children[[1]]$children[[5]]$value
+[1] 6703
+
+
+
+
+$children[[9]]$children[[2]]
+$children[[9]]$children[[2]]$name
+[1] "controls"
+
+$children[[9]]$children[[2]]$children
+$children[[9]]$children[[2]]$children[[1]]
+$children[[9]]$children[[2]]$children[[1]]$name
+[1] "AnchorControl"
+
+$children[[9]]$children[[2]]$children[[1]]$value
+[1] 2138
+
+
+$children[[9]]$children[[2]]$children[[2]]
+$children[[9]]$children[[2]]$children[[2]]$name
+[1] "ClickControl"
+
+$children[[9]]$children[[2]]$children[[2]]$value
+[1] 3824
+
+
+$children[[9]]$children[[2]]$children[[3]]
+$children[[9]]$children[[2]]$children[[3]]$name
+[1] "Control"
+
+$children[[9]]$children[[2]]$children[[3]]$value
+[1] 1353
+
+
+$children[[9]]$children[[2]]$children[[4]]
+$children[[9]]$children[[2]]$children[[4]]$name
+[1] "ControlList"
+
+$children[[9]]$children[[2]]$children[[4]]$value
+[1] 4665
+
+
+$children[[9]]$children[[2]]$children[[5]]
+$children[[9]]$children[[2]]$children[[5]]$name
+[1] "DragControl"
+
+$children[[9]]$children[[2]]$children[[5]]$value
+[1] 2649
+
+
+$children[[9]]$children[[2]]$children[[6]]
+$children[[9]]$children[[2]]$children[[6]]$name
+[1] "ExpandControl"
+
+$children[[9]]$children[[2]]$children[[6]]$value
+[1] 2832
+
+
+$children[[9]]$children[[2]]$children[[7]]
+$children[[9]]$children[[2]]$children[[7]]$name
+[1] "HoverControl"
+
+$children[[9]]$children[[2]]$children[[7]]$value
+[1] 4896
+
+
+$children[[9]]$children[[2]]$children[[8]]
+$children[[9]]$children[[2]]$children[[8]]$name
+[1] "IControl"
+
+$children[[9]]$children[[2]]$children[[8]]$value
+[1] 763
+
+
+$children[[9]]$children[[2]]$children[[9]]
+$children[[9]]$children[[2]]$children[[9]]$name
+[1] "PanZoomControl"
+
+$children[[9]]$children[[2]]$children[[9]]$value
+[1] 5222
+
+
+$children[[9]]$children[[2]]$children[[10]]
+$children[[9]]$children[[2]]$children[[10]]$name
+[1] "SelectionControl"
+
+$children[[9]]$children[[2]]$children[[10]]$value
+[1] 7862
+
+
+$children[[9]]$children[[2]]$children[[11]]
+$children[[9]]$children[[2]]$children[[11]]$name
+[1] "TooltipControl"
+
+$children[[9]]$children[[2]]$children[[11]]$value
+[1] 8435
+
+
+
+
+$children[[9]]$children[[3]]
+$children[[9]]$children[[3]]$name
+[1] "events"
+
+$children[[9]]$children[[3]]$children
+$children[[9]]$children[[3]]$children[[1]]
+$children[[9]]$children[[3]]$children[[1]]$name
+[1] "DataEvent"
+
+$children[[9]]$children[[3]]$children[[1]]$value
+[1] 2313
+
+
+$children[[9]]$children[[3]]$children[[2]]
+$children[[9]]$children[[3]]$children[[2]]$name
+[1] "SelectionEvent"
+
+$children[[9]]$children[[3]]$children[[2]]$value
+[1] 1880
+
+
+$children[[9]]$children[[3]]$children[[3]]
+$children[[9]]$children[[3]]$children[[3]]$name
+[1] "TooltipEvent"
+
+$children[[9]]$children[[3]]$children[[3]]$value
+[1] 1701
+
+
+$children[[9]]$children[[3]]$children[[4]]
+$children[[9]]$children[[3]]$children[[4]]$name
+[1] "VisualizationEvent"
+
+$children[[9]]$children[[3]]$children[[4]]$value
+[1] 1117
+
+
+
+
+$children[[9]]$children[[4]]
+$children[[9]]$children[[4]]$name
+[1] "legend"
+
+$children[[9]]$children[[4]]$children
+$children[[9]]$children[[4]]$children[[1]]
+$children[[9]]$children[[4]]$children[[1]]$name
+[1] "Legend"
+
+$children[[9]]$children[[4]]$children[[1]]$value
+[1] 20859
+
+
+$children[[9]]$children[[4]]$children[[2]]
+$children[[9]]$children[[4]]$children[[2]]$name
+[1] "LegendItem"
+
+$children[[9]]$children[[4]]$children[[2]]$value
+[1] 4614
+
+
+$children[[9]]$children[[4]]$children[[3]]
+$children[[9]]$children[[4]]$children[[3]]$name
+[1] "LegendRange"
+
+$children[[9]]$children[[4]]$children[[3]]$value
+[1] 10530
+
+
+
+
+$children[[9]]$children[[5]]
+$children[[9]]$children[[5]]$name
+[1] "operator"
+
+$children[[9]]$children[[5]]$children
+$children[[9]]$children[[5]]$children[[1]]
+$children[[9]]$children[[5]]$children[[1]]$name
+[1] "distortion"
+
+$children[[9]]$children[[5]]$children[[1]]$children
+$children[[9]]$children[[5]]$children[[1]]$children[[1]]
+$children[[9]]$children[[5]]$children[[1]]$children[[1]]$name
+[1] "BifocalDistortion"
+
+$children[[9]]$children[[5]]$children[[1]]$children[[1]]$value
+[1] 4461
+
+
+$children[[9]]$children[[5]]$children[[1]]$children[[2]]
+$children[[9]]$children[[5]]$children[[1]]$children[[2]]$name
+[1] "Distortion"
+
+$children[[9]]$children[[5]]$children[[1]]$children[[2]]$value
+[1] 6314
+
+
+$children[[9]]$children[[5]]$children[[1]]$children[[3]]
+$children[[9]]$children[[5]]$children[[1]]$children[[3]]$name
+[1] "FisheyeDistortion"
+
+$children[[9]]$children[[5]]$children[[1]]$children[[3]]$value
+[1] 3444
+
+
+
+
+$children[[9]]$children[[5]]$children[[2]]
+$children[[9]]$children[[5]]$children[[2]]$name
+[1] "encoder"
+
+$children[[9]]$children[[5]]$children[[2]]$children
+$children[[9]]$children[[5]]$children[[2]]$children[[1]]
+$children[[9]]$children[[5]]$children[[2]]$children[[1]]$name
+[1] "ColorEncoder"
+
+$children[[9]]$children[[5]]$children[[2]]$children[[1]]$value
+[1] 3179
+
+
+$children[[9]]$children[[5]]$children[[2]]$children[[2]]
+$children[[9]]$children[[5]]$children[[2]]$children[[2]]$name
+[1] "Encoder"
+
+$children[[9]]$children[[5]]$children[[2]]$children[[2]]$value
+[1] 4060
+
+
+$children[[9]]$children[[5]]$children[[2]]$children[[3]]
+$children[[9]]$children[[5]]$children[[2]]$children[[3]]$name
+[1] "PropertyEncoder"
+
+$children[[9]]$children[[5]]$children[[2]]$children[[3]]$value
+[1] 4138
+
+
+$children[[9]]$children[[5]]$children[[2]]$children[[4]]
+$children[[9]]$children[[5]]$children[[2]]$children[[4]]$name
+[1] "ShapeEncoder"
+
+$children[[9]]$children[[5]]$children[[2]]$children[[4]]$value
+[1] 1690
+
+
+$children[[9]]$children[[5]]$children[[2]]$children[[5]]
+$children[[9]]$children[[5]]$children[[2]]$children[[5]]$name
+[1] "SizeEncoder"
+
+$children[[9]]$children[[5]]$children[[2]]$children[[5]]$value
+[1] 1830
+
+
+
+
+$children[[9]]$children[[5]]$children[[3]]
+$children[[9]]$children[[5]]$children[[3]]$name
+[1] "filter"
+
+$children[[9]]$children[[5]]$children[[3]]$children
+$children[[9]]$children[[5]]$children[[3]]$children[[1]]
+$children[[9]]$children[[5]]$children[[3]]$children[[1]]$name
+[1] "FisheyeTreeFilter"
+
+$children[[9]]$children[[5]]$children[[3]]$children[[1]]$value
+[1] 5219
+
+
+$children[[9]]$children[[5]]$children[[3]]$children[[2]]
+$children[[9]]$children[[5]]$children[[3]]$children[[2]]$name
+[1] "GraphDistanceFilter"
+
+$children[[9]]$children[[5]]$children[[3]]$children[[2]]$value
+[1] 3165
+
+
+$children[[9]]$children[[5]]$children[[3]]$children[[3]]
+$children[[9]]$children[[5]]$children[[3]]$children[[3]]$name
+[1] "VisibilityFilter"
+
+$children[[9]]$children[[5]]$children[[3]]$children[[3]]$value
+[1] 3509
+
+
+
+
+$children[[9]]$children[[5]]$children[[4]]
+$children[[9]]$children[[5]]$children[[4]]$name
+[1] "IOperator"
+
+$children[[9]]$children[[5]]$children[[4]]$value
+[1] 1286
+
+
+$children[[9]]$children[[5]]$children[[5]]
+$children[[9]]$children[[5]]$children[[5]]$name
+[1] "label"
+
+$children[[9]]$children[[5]]$children[[5]]$children
+$children[[9]]$children[[5]]$children[[5]]$children[[1]]
+$children[[9]]$children[[5]]$children[[5]]$children[[1]]$name
+[1] "Labeler"
+
+$children[[9]]$children[[5]]$children[[5]]$children[[1]]$value
+[1] 9956
+
+
+$children[[9]]$children[[5]]$children[[5]]$children[[2]]
+$children[[9]]$children[[5]]$children[[5]]$children[[2]]$name
+[1] "RadialLabeler"
+
+$children[[9]]$children[[5]]$children[[5]]$children[[2]]$value
+[1] 3899
+
+
+$children[[9]]$children[[5]]$children[[5]]$children[[3]]
+$children[[9]]$children[[5]]$children[[5]]$children[[3]]$name
+[1] "StackedAreaLabeler"
+
+$children[[9]]$children[[5]]$children[[5]]$children[[3]]$value
+[1] 3202
+
+
+
+
+$children[[9]]$children[[5]]$children[[6]]
+$children[[9]]$children[[5]]$children[[6]]$name
+[1] "layout"
+
+$children[[9]]$children[[5]]$children[[6]]$children
+$children[[9]]$children[[5]]$children[[6]]$children[[1]]
+$children[[9]]$children[[5]]$children[[6]]$children[[1]]$name
+[1] "AxisLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[1]]$value
+[1] 6725
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[2]]
+$children[[9]]$children[[5]]$children[[6]]$children[[2]]$name
+[1] "BundledEdgeRouter"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[2]]$value
+[1] 3727
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[3]]
+$children[[9]]$children[[5]]$children[[6]]$children[[3]]$name
+[1] "CircleLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[3]]$value
+[1] 9317
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[4]]
+$children[[9]]$children[[5]]$children[[6]]$children[[4]]$name
+[1] "CirclePackingLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[4]]$value
+[1] 12003
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[5]]
+$children[[9]]$children[[5]]$children[[6]]$children[[5]]$name
+[1] "DendrogramLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[5]]$value
+[1] 4853
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[6]]
+$children[[9]]$children[[5]]$children[[6]]$children[[6]]$name
+[1] "ForceDirectedLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[6]]$value
+[1] 8411
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[7]]
+$children[[9]]$children[[5]]$children[[6]]$children[[7]]$name
+[1] "IcicleTreeLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[7]]$value
+[1] 4864
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[8]]
+$children[[9]]$children[[5]]$children[[6]]$children[[8]]$name
+[1] "IndentedTreeLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[8]]$value
+[1] 3174
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[9]]
+$children[[9]]$children[[5]]$children[[6]]$children[[9]]$name
+[1] "Layout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[9]]$value
+[1] 7881
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[10]]
+$children[[9]]$children[[5]]$children[[6]]$children[[10]]$name
+[1] "NodeLinkTreeLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[10]]$value
+[1] 12870
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[11]]
+$children[[9]]$children[[5]]$children[[6]]$children[[11]]$name
+[1] "PieLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[11]]$value
+[1] 2728
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[12]]
+$children[[9]]$children[[5]]$children[[6]]$children[[12]]$name
+[1] "RadialTreeLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[12]]$value
+[1] 12348
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[13]]
+$children[[9]]$children[[5]]$children[[6]]$children[[13]]$name
+[1] "RandomLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[13]]$value
+[1] 870
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[14]]
+$children[[9]]$children[[5]]$children[[6]]$children[[14]]$name
+[1] "StackedAreaLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[14]]$value
+[1] 9121
+
+
+$children[[9]]$children[[5]]$children[[6]]$children[[15]]
+$children[[9]]$children[[5]]$children[[6]]$children[[15]]$name
+[1] "TreeMapLayout"
+
+$children[[9]]$children[[5]]$children[[6]]$children[[15]]$value
+[1] 9191
+
+
+
+
+$children[[9]]$children[[5]]$children[[7]]
+$children[[9]]$children[[5]]$children[[7]]$name
+[1] "Operator"
+
+$children[[9]]$children[[5]]$children[[7]]$value
+[1] 2490
+
+
+$children[[9]]$children[[5]]$children[[8]]
+$children[[9]]$children[[5]]$children[[8]]$name
+[1] "OperatorList"
+
+$children[[9]]$children[[5]]$children[[8]]$value
+[1] 5248
+
+
+$children[[9]]$children[[5]]$children[[9]]
+$children[[9]]$children[[5]]$children[[9]]$name
+[1] "OperatorSequence"
+
+$children[[9]]$children[[5]]$children[[9]]$value
+[1] 4190
+
+
+$children[[9]]$children[[5]]$children[[10]]
+$children[[9]]$children[[5]]$children[[10]]$name
+[1] "OperatorSwitch"
+
+$children[[9]]$children[[5]]$children[[10]]$value
+[1] 2581
+
+
+$children[[9]]$children[[5]]$children[[11]]
+$children[[9]]$children[[5]]$children[[11]]$name
+[1] "SortOperator"
+
+$children[[9]]$children[[5]]$children[[11]]$value
+[1] 2023
+
+
+
+
+$children[[9]]$children[[6]]
+$children[[9]]$children[[6]]$name
+[1] "Visualization"
+
+$children[[9]]$children[[6]]$value
+[1] 16540
+
+
+
+
+$children[[10]]
+$children[[10]]$children
+$children[[10]]$children[[1]]
+$children[[10]]$children[[1]]$children
+$children[[10]]$children[[1]]$children[[1]]
+$children[[10]]$children[[1]]$children[[1]]$children
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[1]]
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[1]]$name
+[1] "Converters"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[1]]$value
+[1] 721
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[2]]
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[2]]$name
+[1] "DelimitedTextConverter"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[2]]$value
+[1] 4294
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[3]]
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[3]]$name
+[1] "GraphMLConverter"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[3]]$value
+[1] 9800
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[4]]
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[4]]$name
+[1] "IDataConverter"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[4]]$value
+[1] 1314
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[5]]
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[5]]$name
+[1] "JSONConverter"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[1]]$children[[5]]$value
+[1] 2220
+
+
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[2]]
+$children[[10]]$children[[1]]$children[[1]]$children[[2]]$name
+[1] "Data"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[2]]$value
+[1] 20544
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[3]]
+$children[[10]]$children[[1]]$children[[1]]$children[[3]]$name
+[1] "DataList"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[3]]$value
+[1] 19788
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[4]]
+$children[[10]]$children[[1]]$children[[1]]$children[[4]]$name
+[1] "DataSprite"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[4]]$value
+[1] 10349
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[5]]
+$children[[10]]$children[[1]]$children[[1]]$children[[5]]$name
+[1] "EdgeSprite"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[5]]$value
+[1] 3301
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[6]]
+$children[[10]]$children[[1]]$children[[1]]$children[[6]]$name
+[1] "NodeSprite"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[6]]$value
+[1] 19382
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$name
+[1] "render"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[1]]
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[1]]$name
+[1] "ArrowType"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[1]]$value
+[1] 698
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[2]]
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[2]]$name
+[1] "EdgeRenderer"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[2]]$value
+[1] 5569
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[3]]
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[3]]$name
+[1] "IRenderer"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[3]]$value
+[1] 353
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[4]]
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[4]]$name
+[1] "ShapeRenderer"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[7]]$children[[4]]$value
+[1] 2247
+
+
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[8]]
+$children[[10]]$children[[1]]$children[[1]]$children[[8]]$name
+[1] "ScaleBinding"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[8]]$value
+[1] 11275
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[9]]
+$children[[10]]$children[[1]]$children[[1]]$children[[9]]$name
+[1] "Tree"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[9]]$value
+[1] 7147
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[10]]
+$children[[10]]$children[[1]]$children[[1]]$children[[10]]$name
+[1] "TreeBuilder"
+
+$children[[10]]$children[[1]]$children[[1]]$children[[10]]$value
+[1] 9930
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[11]]
+$children[[10]]$children[[1]]$children[[1]]$children[[11]]$value
+[1] 1759
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[12]]
+$children[[10]]$children[[1]]$children[[1]]$children[[12]]$value
+[1] 2165
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[13]]
+$children[[10]]$children[[1]]$children[[1]]$children[[13]]$value
+[1] 586
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[14]]
+$children[[10]]$children[[1]]$children[[1]]$children[[14]]$value
+[1] 3331
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[15]]
+$children[[10]]$children[[1]]$children[[1]]$children[[15]]$value
+[1] 772
+
+
+$children[[10]]$children[[1]]$children[[1]]$children[[16]]
+$children[[10]]$children[[1]]$children[[1]]$children[[16]]$value
+[1] 3322
+
+
+
+
+
+
+
+
+
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("df.to.hierarchy", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > cleanEx()
 > nameEx("marimekko")
 > ### * marimekko
@@ -244,7 +2223,7 @@ $labels
 > ##D data(energy)
 > ##D 
 > ##D d3 = sankey(energy)
-> ##D f = tempfile()
+> ##D f = paste0(tempfile(), ".html")
 > ##D save.d3(d3, f)
 > ## End(Not run)
 > 
@@ -253,12 +2232,34 @@ $labels
 > 
 > base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
 > base::cat("save.d3", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("sunburst")
+> ### * sunburst
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: sunburst
+> ### Title: Sunburst diagram
+> ### Aliases: sunburst
+> 
+> ### ** Examples
+> 
+> data(flare)
+> 
+> sunburst(flare$ancestry.df, flare$leaf.df)
+> 
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("sunburst", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
 > ### * <FOOTER>
 > ###
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  3.39 0.56 4.7 NA NA 
+Time elapsed:  2.17 0.3 2.49 NA NA 
 > grDevices::dev.off()
 null device 
           1 

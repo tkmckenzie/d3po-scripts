@@ -4,11 +4,14 @@ choropleth.state	choropleth.state
 cloud	cloud
 color.schemes	color.schemes
 df.to.adjacency	df.to.adjacency
+df.to.hierarchy	df.to.hierarchy
 energy	energy
+flare	flare
 marimekko	marimekko
 sales	sales
 sankey	sankey
 save.d3	save.d3
+sunburst	sunburst
 unemployment.county	unemployment.county
 unemployment.state	unemployment.state
 us.counties	us.counties

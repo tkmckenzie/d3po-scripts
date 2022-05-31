@@ -9,10 +9,11 @@ sankey(
   source.column = "source",
   target.column = "target",
   value.column = "value",
+  sort.nodes = c(TRUE, FALSE),
   text.align = c("outside", "inside"),
   margin.proportion = 0.2,
   edge.color = c("path", "input", "output", "none"),
-  color.scheme = c("Spectral", d3po::color.schemes),
+  color.scheme = c("Spectral", names(d3po::color.schemes)),
   width = NULL,
   height = NULL,
   viewer = c("internal", "external", "browser")
@@ -27,13 +28,15 @@ sankey(
 
 \item{value.column}{Name of column containing edge values. Defaults to "value".}
 
+\item{sort.nodes}{Boolean indicating whether to let sankey.js to sort nodes. Defaults to TRUE. If FALSE, nodes will be ordered as they appear in df.}
+
 \item{text.align}{Alignment of node labels. Defaults to "outside".}
 
 \item{margin.proportion}{Proportion of image to devote to margins on both left and right side. Only effective when text.align is "outside". Defaults to 0.2, must be between 0 and 0.5.}
 
 \item{edge.color}{Method of coloring edges. The value "path" will create a gradient between two nodes. Defaults to "path".}
 
-\item{color.scheme}{Color scheme to use in visualization. See ?d3po::color.schemes for more details.}
+\item{color.scheme}{Color scheme to use in visualization. See \link[d3po]{color.schemes} for more details.}
 
 \item{width}{Desired width for output widget.}
 
@@ -42,10 +45,10 @@ sankey(
 \item{viewer}{"internal" to use the RStudio internal viewer pane for output; "external" to display in an external RStudio window; "browser" to display in an external browser.}
 }
 \value{
-A d3 object as returned by r2d3::r2d3.
+A d3 object as returned by \link[r2d3]{r2d3}.
 }
 \description{
-Creates Sankey diagram from edge data.frame.
+Creates Sankey diagram from edgelist data.frame.
 }
 \details{
 Utilizes a script similar to \url{https://observablehq.com/@d3/sankey-diagram} adapted to work with r2d3.

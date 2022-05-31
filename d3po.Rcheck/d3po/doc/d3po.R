@@ -69,3 +69,13 @@ df = data.frame(source = rep(LETTERS[1:num.sources], each = num.targets),
                 value = runif(num.groups * num.vars, 0, 10))
 sankey(df)
 
+## -----------------------------------------------------------------------------
+num.children = 15
+num.parents = 3
+ancestry.df = data.frame(parent = sample(LETTERS[1:num.parents], num.children, replace = TRUE),
+                         child = letters[1:num.children])
+ancestry.df = rbind(data.frame(parent = "flare", child = LETTERS[1:num.parents]), ancestry.df) # Need to specify head nodes
+leaf.df = data.frame(id = letters[1:num.children], value = runif(num.children, 0, 10))
+
+sunburst(ancestry.df, leaf.df)
+
